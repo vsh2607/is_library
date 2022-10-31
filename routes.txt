@@ -1,0 +1,10 @@
+Routes :
+
+
+Dashboard :
+http://localhost/is_library/dashboard
+
+
+Anggota :
+http://localhost/is_library/anggota
+http://localhost/is_library/anggota/add
