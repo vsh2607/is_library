@@ -8,3 +8,4 @@ http://localhost/is_library/dashboard
 Anggota :
 http://localhost/is_library/anggota
 http://localhost/is_library/anggota/add
+http://localhost/is_library/anggota/delete/2
