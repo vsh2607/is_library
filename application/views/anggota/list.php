@@ -7,10 +7,11 @@
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <div class="row">
-                <div class="col-4">
-                    <h6 class="m-0 font-weight-bold text-primary">Daftar Anggota</h6>
+                <div class="col-5">
+                    <h6 class="m-0 font-weight-bold text-primary">Daftar Anggota<span><a href="<?= base_url() ?>anggota/add"> <strong>+</strong></a></span></h6>
+
                 </div>
-                <div class="col-4"></div>
+                <div class="col-3"></div>
                 <div class="col-4">
                     <div class="input-group">
                         <input type="text" class="form-control" id="myInput" onkeyup="myFunction()" placeholder="Cari Anggota...">
@@ -116,7 +117,7 @@
 
     <!-- Update Modal-->
     <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Ubah Data</h5>
@@ -125,11 +126,51 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <h4><?=$da['agt_nama']?></h4>
+                    <?php if ($da['agt_nama'] !== null) { ?>
+                        <form action="<?= base_url() ?>anggota/edit/<?= $da['agt_img_url'] ?>" method="post" enctype="multipart/form-data">
+
+                            <div class="form-group">
+                                <label for="agt_no_id"><strong>No Identitas</strong></label>
+                                <input type="number" class="form-control" id="agt_no_id" name="agt_no_id" value="<?= $da['agt_no_id'] ?>" required>
+
+                            </div>
+
+                            <div class="form-group">
+                                <label for="agt_nama"><strong>Nama</strong></label>
+                                <input type="text" class="form-control" id="agt_nama" name="agt_nama" value="<?= $da['agt_nama'] ?>" required>
+
+                            </div>
+
+                            <div class="form-group">
+                                <label for="agt_no_telp"><strong>No Telp</strong></label>
+                                <input type="text" class="form-control" id="agt_no_telp" name="agt_no_telp" value="<?= $da['agt_no_telp'] ?>">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="agt_dob"><strong>Tanggal Lahir</strong></label>
+                                <input type="date" class="form-control" id="agt_dob" name="agt_dob" value="<?= $da['agt_dob'] ?>" required>
+
+                            </div>
+
+                            <div class="form-group">
+                                <label for="agt_alamat"><strong>Alamat</strong></label>
+                                <input type="text" class="form-control " id="agt_alamat" name="agt_alamat" placeholder="Alamat" value="<?= $da['agt_alamat'] ?>" required>
+
+                            </div>
+
+                            <div class="form-group">
+                                <label for="agt_img_url"><strong>Upload Gambar</strong></label>
+                                <p></p>
+                                <input type="file" id="agt_img_url" name="agt_img_url">
+                            </div>
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-danger" href="<?= base_url() ?>anggota/delete/<?= $da['agt_kode'] ?>">Delete</a>
+                    <button class="btn btn-warning" type="submit">Edit</button>
+                    </form>
+
+                <?php } ?>
+
                 </div>
             </div>
         </div>
