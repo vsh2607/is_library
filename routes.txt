@@ -11,3 +11,11 @@ http://localhost/is_library/anggota/add
 http://localhost/is_library/anggota/delete/2
 http://localhost/is_library/anggota/edit/2
 
+
+
+Buku :
+http://localhost/is_library/buku
+http://localhost/is_library/buku/add
+http://localhost/is_library/buku/index2
+http://localhost/is_library/buku/addN
+

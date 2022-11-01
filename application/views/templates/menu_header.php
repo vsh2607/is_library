@@ -81,9 +81,13 @@
                 </a>
                 <div id="collapseTwoBuku" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Menu Buku:</h6>
-                        <a class="collapse-item" href="buttons.html">Daftar Buku</a>
-                        <a class="collapse-item" href="cards.html">Tambah Buku</a>
+                        <h6 class="collapse-header">Menu Buku Non Paket:</h6>
+                        <a class="collapse-item" href="<?=base_url()?>buku/index2">Daftar Buku Non Paket</a>
+                        <a class="collapse-item" href="<?=base_url()?>buku/addN">Tambah Buku Non Paket</a>
+                        
+                        <h6 class="collapse-header">Menu Buku Paket:</h6>
+                        <a class="collapse-item" href="<?=base_url()?>buku">Daftar Buku Paket</a>
+                        <a class="collapse-item" href="<?=base_url()?>buku/add">Tambah Buku Paket</a>
                     </div>
                 </div>
             </li>
