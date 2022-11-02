@@ -8,10 +8,10 @@
         <div class="card-header py-3">
             <div class="row">
                 <div class="col-5">
-                    <h6 class="m-0 font-weight-bold text-primary">Daftar Buku Non Paket<span><a href="<?= base_url() ?>buku/addN"> <strong>+</strong></a></span></h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Daftar Buku Non Paket<span></span></h6>
                     <br>
-                    <a href="<?= base_url() ?>buku/index2"><small>Buku Non Paket</small></a> |
-                    <a href="<?= base_url() ?>buku"><small>Buku Paket</small></a>
+                    <a class="btn btn-primary btn-sm" href="<?= base_url() ?>buku/index2"><small>Buku Non Paket</small></a> |
+                    <a class="btn btn-primary btn-sm" href="<?= base_url() ?>buku"><small>Buku Paket</small></a>
 
                 </div>
                 <div class="col-3"></div>
@@ -19,6 +19,10 @@
                     <div class="input-group">
                         <input type="text" class="form-control" id="myInput" onkeyup="myFunction()" placeholder="Cari Buku...">
                     </div>
+                    <br>
+                    <a class="btn btn-sm btn-primary float-right" href="<?= base_url() ?>buku/addN"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                        </svg><strong class="mx-2">Tambah Buku</strong></a>
                 </div>
             </div>
         </div>
@@ -140,23 +144,23 @@
 
                             <div class="form-group">
                                 <label for="bnp_no_inventaris"><strong>No Inventaris Buku</strong></label>
-                                <input type="number" class="form-control" id="bnp_no_inventaris" name="bnp_no_inventaris" value="<?=$db['bnp_no_inventaris']?>" required>
+                                <input type="number" class="form-control" id="bnp_no_inventaris" name="bnp_no_inventaris" value="<?= $db['bnp_no_inventaris'] ?>" required>
 
                             </div>
 
                             <div class="form-group">
                                 <label for="bnp_judul_buku"><strong>Judul Buku</strong></label>
-                                <input type="text" class="form-control " id="bnp_judul_buku" name="bnp_judul_buku" value="<?=$db['bnp_judul_buku']?>" required>
+                                <input type="text" class="form-control " id="bnp_judul_buku" name="bnp_judul_buku" value="<?= $db['bnp_judul_buku'] ?>" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="bnp_pengarang"><strong>Pengarang</strong></label>
-                                <input type="text" class="form-control " id="bnp_pengarang" name="bnp_pengarang" value="<?=$db['bnp_pengarang']?>" required>
+                                <input type="text" class="form-control " id="bnp_pengarang" name="bnp_pengarang" value="<?= $db['bnp_pengarang'] ?>" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="bnp_klasifikasi"><strong>Klasifikasi</strong></label>
-                                <input type="text" class="form-control " id="bnp_klasifikasi" name="bnp_klasifikasi" value="<?=$db['bnp_klasifikasi']?>" required>
+                                <input type="text" class="form-control " id="bnp_klasifikasi" name="bnp_klasifikasi" value="<?= $db['bnp_klasifikasi'] ?>" required>
                             </div>
 
 
@@ -191,18 +195,18 @@
 
                             <div class="form-group">
                                 <label for="bnp_harga"><strong>Harga</strong></label>
-                                <input type="number" class="form-control " id="bnp_harga" name="bnp_harga">
+                                <input type="number" class="form-control " id="bnp_harga" name="bnp_harga" value="<?= $db['bnp_harga'] ?>">
                             </div>
 
                             <div class="form-group">
                                 <label for="bnp_keterangan"><strong>Keterangan</strong></label>
-                                <input type="text" class="form-control " id="bnp_keterangan" name="bnp_keterangan">
+                                <input type="text" class="form-control " id="bnp_keterangan" name="bnp_keterangan" value="<?= $db['bnp_keterangan'] ?>">
                             </div>
 
 
                             <div class="form-group">
                                 <label for="bnp_jumlah_buku"><strong>Jumlah Buku</strong></label>
-                                <input type="number" class="form-control " id="bnp_jumlah_buku" name="bnp_jumlah_buku">
+                                <input type="number" class="form-control " id="bnp_jumlah_buku" name="bnp_jumlah_buku" value="<?= $db['bnp_jumlah_buku'] ?>">
                             </div>
                 </div>
                 <div class="modal-footer">

@@ -169,11 +169,44 @@ class Buku extends CI_Controller
     }
 
 
-    public function edit()
+    public function edit($noIdBuku)
     {
+        $data['staff'] = $this->userData();
+        $data['title'] = 'Menu Perpus Sanjaya';
+        
+
+        if ($data['staff'] === null) {
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+            Login terlebih dahulu!
+            </div>');
+
+            redirect('auth');
+        } else {
+            $this->BukuModel->edit($noIdBuku);
+            redirect('buku/index');
+        }
+
+
     }
 
-    public function editN()
+    public function editN($noIdBuku)
     {
+
+        $data['staff'] = $this->userData();
+        $data['title'] = 'Menu Perpus Sanjaya';
+        
+
+        if ($data['staff'] === null) {
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+            Login terlebih dahulu!
+            </div>');
+
+            redirect('auth');
+        } else {
+            $this->BukuModel->editN($noIdBuku);
+            redirect('buku/index2');
+        }
+
+
     }
 }
