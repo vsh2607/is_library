@@ -64,6 +64,8 @@ create table transaksi(
   tr_kode int not null primary key auto_increment,
   tr_tgl_pinjam date,
   agt_kode int,
+  tr_kelas_peminjam enum('X', 'XI', 'XII'),
+  tr_created int,
   foreign key (agt_kode) references anggota (agt_kode)
 
 );

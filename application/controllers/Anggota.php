@@ -10,6 +10,10 @@ class Anggota extends CI_Controller
         $this->load->model('AnggotaModel');
     }
 
+    public function coba(){
+        $this->load->view('transaksi/test');
+    }
+
     private function userData()
     {
         $data['staff'] = $this->db->get_where('staff', ['st_username' => $this->session->userdata('st_username')])->row_array();
