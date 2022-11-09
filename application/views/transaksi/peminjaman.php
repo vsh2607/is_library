@@ -51,27 +51,9 @@
                             </datalist>
                         </div>
 
-                        <?php
 
-
-                        $q1 = "<?php foreach($" . "data_buku_nonpaket as $" . "db):?>";
-
-
-                        $q4 = "<?php endforeach;?>";
-
-                        ?>
                         <!-- <tr><td><input type="text" class="form-control"></td><td><input type="date" class="form-control"></td><td><button class="btn btn-sm btn-danger"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" /></svg></button></td></tr> -->
-                        <script>
-                            function deleterow(el) {
-                                $(el).closest('tr').remove();
-                            }
 
-                            function AddData() {
-                                var rows = "";
-                                rows += "<tr><td><input list='buku' placeholder='--Pilih Buku--' class='form-control' name='bnp_id' id='bnp_id'>" + "<?php foreach ($data_buku_nonpaket as $db) : ?>" + "<datalist id='buku'><option value='" + "<?= $db['bnp_id'] ?>" + "'>" + "<?= $db['bnp_judul_buku'] ?>" + "</option></datalist>" + "<?php endforeach; ?>" + "</td><td><input type='date' class='form-control' name='dt_tgl_kembali' id='dt_tgl_kembali'></td><td><button onclick = deleterow(this)>Delete</button></td></tr>"
-                                $(rows).appendTo("#list tbody");
-                            }
-                        </script>
                         <label for=""><strong>Buku yang ingin dipinjam </strong></label>
                         <input id="button" type="button" value="Add" onclick="AddData()">
                         <div class="table-responsive">
@@ -133,6 +115,35 @@
 
 
 
-
-
 </div>
+
+
+<script>
+    function deleterow(el) {
+        $(el).closest('tr').remove();
+    }
+
+    function AddData() {
+        var rows = "";
+        rows += 
+        "<tr>" +
+        "<td>" +
+            "<input list='buku' placeholder='--Pilih Buku--' class='form-control' name='bnp_id' id='bnp_id'>" + 
+                "<?php foreach ($data_buku_nonpaket as $dbn) : ?>" +
+                     "<datalist id='buku'>" + 
+                         "<option value='<?=$dbn['bnp_id']?>'><?=$dbn['bnp_judul_buku']?></option>" +
+                    "</datalist>" +
+                "<?php endforeach; ?>" +
+        "</td>" +
+
+        "<td>" +
+            "<input type='date' class='form-control' name='dt_tgl_kembali' id='dt_tgl_kembali'>" +
+        "</td>" +
+        
+        "<td>" + 
+            "<button onclick = deleterow(this)>Delete</button>" +
+        "</td>" + 
+        "</tr>"
+        $(rows).appendTo("#list tbody");
+    }
+</script>

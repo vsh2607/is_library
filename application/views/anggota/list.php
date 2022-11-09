@@ -196,14 +196,13 @@
 
                         $(document).on('click', '.btn_edit', function(){
                             var agt_kode = $(this).closest('tr').find('.agt_kode').text();
-                            var agt_img_url = $(this).closest('tr').find('.agt_image_url').text();
+                            var agt_img_url = $(this).closest('tr').find('.agt_img_url').text();
                             var agt_nama = $(this).closest('tr').find('.agt_nama').text();
                             var agt_no_id = $(this).closest('tr').find('.agt_no_id').text();
                             var agt_dob = $(this).closest('tr').find('.agt_dob').text();
                             var agt_alamat = $(this).closest('tr').find('.agt_alamat').text();
                             var agt_no_telp = $(this).closest('tr').find('.agt_no_telp').text();
 
-                            alert(agt_img_url);
                             document.getElementById('agt_nama').value= agt_nama;
                             document.getElementById('agt_no_id').value= agt_no_id;
                             document.getElementById('agt_dob').value = agt_dob;
