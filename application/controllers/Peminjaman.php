@@ -9,6 +9,7 @@ class Peminjaman extends CI_Controller
         $this->load->model('PeminjamanModel');
         $this->load->model('AnggotaModel');
         $this->load->model('BukuModel');
+        $this->load->model('PeminjamanModel');
     }
 
 
@@ -39,4 +40,25 @@ class Peminjaman extends CI_Controller
             $this->load->view('templates/menu_footer');
         }
     }
+
+
+    public function pinjam(){
+
+        $data['staff'] = $this->userData();
+        $data['title'] = 'Menu Perpus Sanjaya';
+        
+        if ($data['staff'] === null) {
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+            Login terlebih dahulu!
+            </div>');
+            
+            redirect('auth');
+        } else {
+           
+            $this->PeminjamanModel->pinjam();
+        }
+    }
+
+
+   
 }

@@ -17,20 +17,19 @@
                     </div>
                 </div>
 
-                <form action="" method="POST">
+                <form action="<?= base_url() ?>peminjaman/pinjam" method="POST">
 
 
 
                     <div class="card-body">
-
                         <div class="form-group">
-                            <label for="agt_nama"><strong>No Id Anggota</strong></label>
-                            <input list="anggota" class="form-control" name="agt_nama" id="agt_nama" placeholder="--Cari Anggota--">
-
-                            <datalist id="anggota">
+                            <label for="agt_nama"><strong>Nama Anggota</strong></label>
+                            <select name="agt_kode" id="agt_kode" class="form-control">
+                                <option value="" selected disabled>Pilih Anggota...</option>
                                 <?php foreach ($data_anggota as $da) : ?>
-                                    <option value="<?= $da['agt_no_id'] ?>"><?= $da['agt_nama'] ?></option>
+                                    <option value="<?=$da['agt_kode']?>"><?=$da['agt_nama']?></option>
                                 <?php endforeach; ?>
+                            </select>
                             </datalist>
                         </div>
 
@@ -125,25 +124,27 @@
 
     function AddData() {
         var rows = "";
-        rows += 
-        "<tr>" +
-        "<td>" +
-            "<input list='buku' placeholder='--Pilih Buku--' class='form-control' name='bnp_id' id='bnp_id'>" + 
-                "<?php foreach ($data_buku_nonpaket as $dbn) : ?>" +
-                     "<datalist id='buku'>" + 
-                         "<option value='<?=$dbn['bnp_id']?>'><?=$dbn['bnp_judul_buku']?></option>" +
-                    "</datalist>" +
-                "<?php endforeach; ?>" +
-        "</td>" +
+        rows +=
+            "<tr>" +
+            "<td>" +
 
-        "<td>" +
-            "<input type='date' class='form-control' name='dt_tgl_kembali' id='dt_tgl_kembali'>" +
-        "</td>" +
-        
-        "<td>" + 
-            "<button onclick = deleterow(this)>Delete</button>" +
-        "</td>" + 
-        "</tr>"
+            "<select name='bnp_id[]' id='bnp_id' class='form-control'>" +
+            "<option value='' selected disabled>Pilih Buku...</option>" +
+
+            "<?php foreach ($data_buku_nonpaket as $dbn) : ?>" +
+            "<option value='<?= $dbn['bnp_id'] ?>'><?= $dbn['bnp_judul_buku'] ?></option>" +
+            "<?php endforeach; ?>" +
+            "</select>" +
+            "</td>" +
+
+            "<td>" +
+            "<input type='date' class='form-control' name='dt_tgl_kembali[]' id='dt_tgl_kembali'>" +
+            "</td>" +
+
+            "<td>" +
+            "<button class='btn btn-danger btn-sm' onclick = deleterow(this)>Delete</button>" +
+            "</td>" +
+            "</tr>"
         $(rows).appendTo("#list tbody");
     }
 </script>
