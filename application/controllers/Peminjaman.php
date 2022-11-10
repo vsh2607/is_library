@@ -19,46 +19,84 @@ class Peminjaman extends CI_Controller
         return $data['staff'];
     }
 
+    #Untuk menampilkan inputan peminjaman buku non paket
     public function index()
     {
         $data['staff'] = $this->userData();
         $data['title'] = 'Menu Perpus Sanjaya';
         $data['date_now'] = $this->PeminjamanModel->dateNow();
-        
+
         if ($data['staff'] === null) {
             $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
             Login terlebih dahulu!
             </div>');
-            
+
             redirect('auth');
         } else {
-            
+
             $data['data_anggota'] = $this->AnggotaModel->getAllData();
-            $data['data_buku_nonpaket'] = $this->BukuModel-> getAllNonPaket();
+            $data['data_buku_nonpaket'] = $this->BukuModel->getAllNonPaket();
             $this->load->view('templates/menu_header', $data);
-            $this->load->view('transaksi/peminjaman', $data);
+            $this->load->view('transaksi/peminjaman_nonpaket', $data);
             $this->load->view('templates/menu_footer');
         }
     }
 
 
-    public function pinjam(){
+    #Untuk menampilkan inputan peminjaman buku paket
+    public function index2()
+    {
+    }
 
+
+    #Untuk menampilkan list buku peminjaman non paket
+    public function show_np()
+    {
         $data['staff'] = $this->userData();
         $data['title'] = 'Menu Perpus Sanjaya';
-        
+        $data['date_now'] = $this->PeminjamanModel->dateNow();
+
         if ($data['staff'] === null) {
             $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
             Login terlebih dahulu!
             </div>');
-            
+
             redirect('auth');
         } else {
-           
-            $this->PeminjamanModel->pinjam();
+
+            $data['data_anggota'] = $this->AnggotaModel->getAllData();
+            $data['data_buku_nonpaket'] = $this->BukuModel->getAllNonPaket();
+            $this->load->view('templates/menu_header', $data);
+            $this->load->view('transaksi/peminjaman_nonpaket', $data);
+            $this->load->view('templates/menu_footer');
         }
     }
 
 
-   
+    #Untuk menampilkan list buku peminjaman non paket
+    public function show_p()
+    {
+    }
+
+
+
+
+
+    public function pinjamNonPaket()
+    {
+
+        $data['staff'] = $this->userData();
+        $data['title'] = 'Menu Perpus Sanjaya';
+
+        if ($data['staff'] === null) {
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+            Login terlebih dahulu!
+            </div>');
+
+            redirect('auth');
+        } else {
+
+            $this->PeminjamanModel->pinjamNonPaket();
+        }
+    }
 }

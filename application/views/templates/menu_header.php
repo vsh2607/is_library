@@ -125,13 +125,29 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>Transaksi</span>
+                    <span>Buku Non Paket</span>
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Menu Transaksi</h6>
-                        <a class="collapse-item" href="<?= base_url() ?>peminjaman">Peminjaman</a>
-                        <a class="collapse-item" href="register.html">Pengembalian</a>
+                        <a class="collapse-item" href="<?= base_url() ?>peminjaman">Pinjam</a>
+                        <a class="collapse-item" href="">List Pinjam</a>
+                    </div>
+                </div>
+            </li>
+          
+          
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages2" aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Buku Paket</span>
+                </a>
+                <div id="collapsePages2" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Menu Transaksi</h6>
+                        <a class="collapse-item" href="">Pinjam</a>
+                        <a class="collapse-item" href="">List Pinjam</a>
                     </div>
                 </div>
             </li>

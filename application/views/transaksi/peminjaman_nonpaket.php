@@ -17,7 +17,7 @@
                     </div>
                 </div>
 
-                <form action="<?= base_url() ?>peminjaman/pinjam" method="POST">
+                <form action="<?= base_url() ?>peminjaman/pinjamNonPaket" method="POST">
 
 
 
@@ -72,8 +72,6 @@
 
 
                     </div>
-
-
 
 
                     <div class="card-footer">
