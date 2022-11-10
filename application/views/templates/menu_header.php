@@ -131,7 +131,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Menu Transaksi</h6>
                         <a class="collapse-item" href="<?= base_url() ?>peminjaman">Pinjam</a>
-                        <a class="collapse-item" href="">List Pinjam</a>
+                        <a class="collapse-item" href="<?=base_url()?>peminjaman/show_np">List Pinjam</a>
                     </div>
                 </div>
             </li>

@@ -55,7 +55,10 @@ class Peminjaman extends CI_Controller
         $data['staff'] = $this->userData();
         $data['title'] = 'Menu Perpus Sanjaya';
         $data['date_now'] = $this->PeminjamanModel->dateNow();
+        $data['data_join'] = $this->PeminjamanModel->getJoinData();
 
+        var_dump($data['data_join']);
+        die();
         if ($data['staff'] === null) {
             $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
             Login terlebih dahulu!
@@ -67,7 +70,7 @@ class Peminjaman extends CI_Controller
             $data['data_anggota'] = $this->AnggotaModel->getAllData();
             $data['data_buku_nonpaket'] = $this->BukuModel->getAllNonPaket();
             $this->load->view('templates/menu_header', $data);
-            $this->load->view('transaksi/peminjaman_nonpaket', $data);
+            $this->load->view('transaksi/list_peminjaman_nonpaket', $data);
             $this->load->view('templates/menu_footer');
         }
     }

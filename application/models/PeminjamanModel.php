@@ -15,9 +15,17 @@ class PeminjamanModel extends CI_Model
        return $this->db->get('transaksi')->row();
     }
 
+    public function getJoinData(){
+        $this->db->select('*');
+        $this->db->from('transaksi');
+        $this->db->join('anggota', 'anggota.agt_kode = transaksi.agt_kode');
+        $this->db->join('detail_transaksi', 'detail_transaksi.tr_kode = transaksi.tr_kode');
+        return $this->db->get()->result_array;
+
+    }
     
 
-    public function pinjam()
+    public function pinjamNonPaket()
     {
         $post = $this->input->post();
 
@@ -30,14 +38,6 @@ class PeminjamanModel extends CI_Model
             'tr_created' => time()
            
         ];
-
-//         dt_kode
-// dt_denda
-// tr_kode
-// bkp_no_induk
-// bnp_id
-// dt_tgl_kembali
-// dt_is_returned
 
 
         $this->db->insert('transaksi', $data);
