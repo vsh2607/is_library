@@ -85,13 +85,13 @@
                 </a>
                 <div id="collapseTwoBuku" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Menu Buku Non Paket:</h6>
-                        <a class="collapse-item" href="<?= base_url() ?>buku/index2">Daftar Buku Non Paket</a>
-                        <a class="collapse-item" href="<?= base_url() ?>buku/addN">Tambah Buku Non Paket</a>
-
+                        <h6 class="collapse-header">Menu Buku <!--Non Paket-->:</h6>
+                        <a class="collapse-item" href="<?= base_url() ?>buku/index2">Daftar Buku</a>
+                        <a class="collapse-item" href="<?= base_url() ?>buku/addN">Tambah Buku</a>
+<!-- 
                         <h6 class="collapse-header">Menu Buku Paket:</h6>
                         <a class="collapse-item" href="<?= base_url() ?>buku">Daftar Buku Paket</a>
-                        <a class="collapse-item" href="<?= base_url() ?>buku/add">Tambah Buku Paket</a>
+                        <a class="collapse-item" href="<?= base_url() ?>buku/add">Tambah Buku Paket</a> -->
                     </div>
                 </div>
             </li>
@@ -125,7 +125,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>Buku Non Paket</span>
+                    <span>Transaksi Peminjaman<!--Non Paket---></span>
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
@@ -137,7 +137,7 @@
             </li>
           
           
-            <!-- Nav Item - Pages Collapse Menu -->
+            <!-- Nav Item - Pages Collapse Menu
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages2" aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-fw fa-folder"></i>
@@ -150,7 +150,7 @@
                         <a class="collapse-item" href="<?=base_url()?>peminjaman/show_p">List Pinjam</a>
                     </div>
                 </div>
-            </li>
+            </li> -->
 
 
             <!-- Divider -->

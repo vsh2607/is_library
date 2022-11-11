@@ -100,6 +100,7 @@ class PeminjamanModel extends CI_Model
 
         $this->db->insert('transaksi', $data);
         $topData =  $this->getLatestPinjamData();
+
     }
 
 
@@ -122,7 +123,7 @@ class PeminjamanModel extends CI_Model
         $topData =  $this->getLatestPinjamData();
 
         $totalBuku = 0;
-        for ($i = 0; $i < count($post['bnp_id']); $i++) {
+        for ($i = 0; $i < count($post['bkp_no_induk']); $i++) {
             $dataDetail = [
                 'dt_denda' => 0,
                 'tr_kode' => $topData->tr_kode,
