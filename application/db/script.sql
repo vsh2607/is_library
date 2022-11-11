@@ -11,7 +11,8 @@ create table anggota(
     agt_no_telp varchar(100),
     agt_dob date not null,
     agt_alamat varchar(200) not null,
-    agt_created date
+    agt_created date,
+    agt_jumlah_pinjam_buku int
 );
 
 
@@ -66,6 +67,7 @@ create table transaksi(
   agt_kode int,
   tr_kelas_peminjam enum('X', 'XI', 'XII'),
   tr_created int,
+  tr_jumlah_transaksi int,
   foreign key (agt_kode) references anggota (agt_kode)
 
 );

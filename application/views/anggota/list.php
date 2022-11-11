@@ -71,7 +71,7 @@
                                 <td class="align-middle text-center">
                                     <img src="<?= base_url() ?>assets/images/anggota/<?= $da['agt_img_url'] ?>" alt="" width="75" height="100">
                                 </td>
-                                
+
                                 <td class="align-middle text-center agt_img_url" style="display:none;"> <?= $da['agt_img_url'] ?></td>
                                 <td class="align-middle text-center agt_kode" style="display:none;"> <?= $da['agt_kode'] ?></td>
                                 <td class="align-middle text-center agt_no_id"><?= $da['agt_no_id'] ?></td>
@@ -191,10 +191,10 @@
                         $(document).on('click', '.btn_delete', function() {
                             var agt_kode = $(this).closest('tr').find('.agt_kode').text();
                             let link = document.getElementById('deleteModalButton');
-                            link.href="<?=base_url()?>anggota/delete/"+agt_kode.trim();
+                            link.href = "<?= base_url() ?>anggota/delete/" + agt_kode.trim();
                         });
 
-                        $(document).on('click', '.btn_edit', function(){
+                        $(document).on('click', '.btn_edit', function() {
                             var agt_kode = $(this).closest('tr').find('.agt_kode').text();
                             var agt_img_url = $(this).closest('tr').find('.agt_img_url').text();
                             var agt_nama = $(this).closest('tr').find('.agt_nama').text();
@@ -203,15 +203,15 @@
                             var agt_alamat = $(this).closest('tr').find('.agt_alamat').text();
                             var agt_no_telp = $(this).closest('tr').find('.agt_no_telp').text();
 
-                            document.getElementById('agt_nama').value= agt_nama;
-                            document.getElementById('agt_no_id').value= agt_no_id;
+                            document.getElementById('agt_nama').value = agt_nama;
+                            document.getElementById('agt_no_id').value = agt_no_id;
                             document.getElementById('agt_dob').value = agt_dob;
                             document.getElementById('agt_alamat').value = agt_alamat;
                             document.getElementById('agt_no_telp').value = agt_no_telp;
-                            document.getElementById('formUpdate').action = "<?=base_url()?>anggota/edit/"+agt_img_url.trim();
-                            
+                            document.getElementById('formUpdate').action = "<?= base_url() ?>anggota/edit/" + agt_img_url.trim();
 
-                            
+
+
                         });
                     });
                 </script>

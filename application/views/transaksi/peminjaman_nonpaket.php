@@ -7,7 +7,7 @@
                 <div class="card-header py-3">
                     <div class="row">
                         <div class="col-5">
-                            <h6 class="m-0 font-weight-bold text-primary">Pinjam Buku</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Pinjam Buku Non Paket</h6>
 
                         </div>
                         <div class="col-3"></div>
@@ -42,12 +42,12 @@
 
                         <div class="form-group">
                             <label for="tr_kelas_peminjam"><strong>Kelas</strong></label>
-                            <input list="kelas" class="form-control" name="tr_kelas_peminjam" placeholder="--Pilih Kelas--">
-                            <datalist id="kelas">
+                            <select name="tr_kelas_peminjam" id="tr_kelas_peminjam" class="form-control">
+                                <option value="" selected disabled>--Pilih Kelas--</option>
                                 <option value="X">X</option>
                                 <option value="XI">XI</option>
                                 <option value="XII">XII</option>
-                            </datalist>
+                            </select>
                         </div>
 
 

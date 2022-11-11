@@ -46,6 +46,23 @@ class Peminjaman extends CI_Controller
     #Untuk menampilkan inputan peminjaman buku paket
     public function index2()
     {
+        $data['staff'] = $this->userData();
+        $data['title'] = 'Menu Perpus Sanjaya';
+        $data['date_now'] = $this->PeminjamanModel->dateNow();
+
+        if ($data['staff'] === null) {
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+            Login terlebih dahulu!
+            </div>');
+
+            redirect('auth');
+        } else {
+
+            $data['data_anggota'] = $this->AnggotaModel->getAllData();
+            $this->load->view('templates/menu_header', $data);
+            $this->load->view('transaksi/peminjaman_paket', $data);
+            $this->load->view('templates/menu_footer');
+        }
     }
 
 
@@ -55,10 +72,8 @@ class Peminjaman extends CI_Controller
         $data['staff'] = $this->userData();
         $data['title'] = 'Menu Perpus Sanjaya';
         $data['date_now'] = $this->PeminjamanModel->dateNow();
-        $data['data_join'] = $this->PeminjamanModel->getJoinData();
+        $data['data_join_transaksi'] = $this->PeminjamanModel->getTransaksiNonPaket();
 
-        var_dump($data['data_join']);
-        die();
         if ($data['staff'] === null) {
             $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
             Login terlebih dahulu!
@@ -76,13 +91,82 @@ class Peminjaman extends CI_Controller
     }
 
 
-    #Untuk menampilkan list buku peminjaman non paket
-    public function show_p()
+
+    public function showDetail_np($kodeTransaksi)
     {
+        $data['staff'] = $this->userData();
+        $data['title'] = 'Menu Perpus Sanjaya';
+        $data['date_now'] = $this->PeminjamanModel->dateNow();
+
+        if ($data['staff'] === null) {
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+            Login terlebih dahulu!
+            </div>');
+
+            redirect('auth');
+        } else {
+
+
+            $data['transaksi_detail_nonpaket'] = $this->PeminjamanModel->getDetailTransaksiNonPaket($kodeTransaksi);
+
+            $this->load->view('templates/menu_header', $data);
+            $this->load->view('transaksi/detail_peminjaman_nonpaket', $data);
+            $this->load->view('templates/menu_footer');
+        }
     }
 
 
 
+    public function returnBukuNP($noIdBuku, $kodeTransaksi, $noDetailTransaksi)
+    {
+        $data['staff'] = $this->userData();
+        $data['title'] = 'Menu Perpus Sanjaya';
+
+        if ($data['staff'] === null) {
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+            Login terlebih dahulu!
+            </div>');
+
+            redirect('auth');
+        } else {
+            $this->PeminjamanModel->returnBukuNP($noIdBuku, $kodeTransaksi, $noDetailTransaksi);
+            redirect('peminjaman/showDetail_np/' . $kodeTransaksi);
+        }
+    }
+
+
+
+    #Untuk menampilkan list buku peminjaman non paket
+    public function show_p()
+    {
+        $data['staff'] = $this->userData();
+        $data['title'] = 'Menu Perpus Sanjaya';
+        $data['date_now'] = $this->PeminjamanModel->dateNow();
+
+        if ($data['staff'] === null) {
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+            Login terlebih dahulu!
+            </div>');
+
+            redirect('auth');
+        } else {
+
+            $this->load->view('templates/menu_header', $data);
+            $this->load->view('transaksi/list_peminjaman_paket', $data);
+            $this->load->view('templates/menu_footer');
+        }
+    }
+
+    public  function pinjamPaket()
+    {
+    }
+
+    public function test()
+    {
+        $data_buku = $this->input->post('kelas', TRUE);
+        $data = $this->db->get_where('');
+        echo json_encode($data);
+    }
 
 
     public function pinjamNonPaket()
@@ -100,6 +184,7 @@ class Peminjaman extends CI_Controller
         } else {
 
             $this->PeminjamanModel->pinjamNonPaket();
+            redirect('peminjaman/show_np');
         }
     }
 }
