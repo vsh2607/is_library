@@ -9,6 +9,15 @@ class PeminjamanModel extends CI_Model
         return date('Y-m-d');
     }
 
+    public function oneYearFromNow(){
+       
+        return  date('Y-m-d', strtotime('+182 day'));
+    }
+    
+    public function oneWeekFromNow(){
+        return  date('Y-m-d', strtotime('+7 day'));
+    }
+
     public function getLatestPinjamData()
     {
         $this->db->order_by('tr_created', 'desc');

@@ -138,7 +138,7 @@
             "</td>" +
 
             "<td>" +
-            "<input type='date' class='form-control' name='dt_tgl_kembali[]' id='dt_tgl_kembali'>" +
+            "<input type='date' class='form-control' value='<?=$date_one_week?>' name='dt_tgl_kembali[]' id='dt_tgl_kembali'>" +
             "</td>" +
 
             "<td>" +

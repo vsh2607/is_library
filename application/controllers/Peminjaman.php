@@ -25,6 +25,8 @@ class Peminjaman extends CI_Controller
         $data['staff'] = $this->userData();
         $data['title'] = 'Menu Perpus Sanjaya';
         $data['date_now'] = $this->PeminjamanModel->dateNow();
+        $data['date_one_week'] = $this->PeminjamanModel->oneWeekFromNow();
+
 
         if ($data['staff'] === null) {
             $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
@@ -49,7 +51,8 @@ class Peminjaman extends CI_Controller
         $data['staff'] = $this->userData();
         $data['title'] = 'Menu Perpus Sanjaya';
         $data['date_now'] = $this->PeminjamanModel->dateNow();
-
+        $data['date_one_year'] = $this->PeminjamanModel->oneYearFromNow();
+       
         if ($data['staff'] === null) {
             $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
             Login terlebih dahulu!

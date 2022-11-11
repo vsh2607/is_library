@@ -17,10 +17,10 @@ class BukuModel extends CI_Model
             'bkp_pengarang' => $this->input->post('bkp_pengarang'),
             'bkp_penerbit' => $this->input->post('bkp_penerbit'),
             'bkp_tahun_terbit' => $this->input->post('bkp_tahun_terbit'),
+            'bkp_kelas' => $this->input->post('bkp_kelas'),
             'bkp_sumber_asal' => $this->input->post('bkp_sumber_asal'),
             'bkp_jumlah_buku' => $this->input->post('bkp_jumlah_buku')
         ];
-
         $this->db->insert('buku_paket', $data);
     }
 
@@ -78,6 +78,7 @@ class BukuModel extends CI_Model
             'bkp_pengarang' => $this->input->post('bkp_pengarang'),
             'bkp_penerbit' => $this->input->post('bkp_penerbit'),
             'bkp_tahun_terbit' => $this->input->post('bkp_tahun_terbit'),
+            'bkp_kelas' => $this->input->post('bkp_kelas'),
             'bkp_sumber_asal' => $this->input->post('bkp_sumber_asal'),
             'bkp_jumlah_buku' => $this->input->post('bkp_jumlah_buku')
         ];

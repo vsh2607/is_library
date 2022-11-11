@@ -74,25 +74,24 @@
                         foreach ($data_buku as $db) : ?>
                             <tr>
                                 <td class="align-middle text-center"><?= $no++ ?></td>
-                                <td class="align-middle text-center"><?= $db['bnp_no_inventaris'] ?></td>
-                                <td class="align-middle text-center"><?= $db['bnp_judul_buku'] ?></td>
-                                <td class="align-middle text-center"><?= $db['bnp_pengarang'] ?></td>
-                                <td class="align-middle text-center"><?= $db['bnp_klasifikasi'] ?></td>
-                                <td class="align-middle text-center"><?= $db['bnp_sumber_asal'] ?></td>
-                                <td class="align-middle text-center"><?= $db['bnp_bahasa'] ?></td>
-                                <td class="align-middle text-center"><?= $db['bnp_macam'] ?></td>
-                                <!-- <th class="align-middle text-center"></th> -->
-                                <!-- <th class="align-middle text-center"></th> -->
-                                <td class="align-middle text-center"><?= $db['bnp_jumlah_buku'] ?></td>
+                                <td class="align-middle text-center bnp_no_inventaris"><?= $db['bnp_no_inventaris'] ?></td>
+                                <td class="align-middle text-center bnp_judul_buku"><?= $db['bnp_judul_buku'] ?></td>
+                                <td class="align-middle text-center bnp_pengarang"><?= $db['bnp_pengarang'] ?></td>
+                                <td class="align-middle text-center bnp_klasifikasi"><?= $db['bnp_klasifikasi'] ?></td>
+                                <td class="align-middle text-center bnp_sumber_asal"><?= $db['bnp_sumber_asal'] ?></td>
+                                <td class="align-middle text-center bnp_bahasa"><?= $db['bnp_bahasa'] ?></td>
+                                <td class="align-middle text-center bnp_macams"><?= $db['bnp_macam'] ?></td>
+                                <td class="align-middle text-center bnp_jumlah_buku"><?= $db['bnp_jumlah_buku'] ?></td>
+                                <td class="bnp_id" style="display:none;"><?=$db['bnp_id']?></td>
                                 <td class="align-middle text-center">
-                                    <!--Hapus-->
-                                    <a href="#" data-toggle="modal" data-target="#updateModal" class="btn btn-sm btn-warning"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
-                                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
-                                        </svg></a>
-
                                     <!--Edit-->
-                                    <a href="#" data-toggle="modal" data-target="#deleteModal" class="btn btn-sm btn-danger"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                    <a href="#" data-toggle="modal" data-target="#updateModal" class="btn btn-sm btn-warning"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                                    </svg></a>
+                                    
+                                    <!--Hapus-->
+                                    <a href="#" data-toggle="modal" data-target="#deleteModal" class="btn btn-sm btn-danger btn_delete"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                                             <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
                                             <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
                                         </svg></a>
@@ -107,6 +106,15 @@
         </div>
     </div>
 
+    <script>
+        $(document).ready(function(){
+            $(document).on('click', '.btn_delete', function(){
+                var kode = $(this).closest('tr').find('.bnp_id').text();
+                alert(kode);
+            })
+        });
+    </script>
+
     <!-- Delete Modal-->
     <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -120,7 +128,7 @@
 
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-danger" href="<?= base_url() ?>buku/deleten/<?= $db['bnp_id'] ?>">Delete</a>
+                    <a class="btn btn-danger" href="">Delete</a>
                 </div>
             </div>
         </div>

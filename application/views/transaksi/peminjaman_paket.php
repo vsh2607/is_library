@@ -36,12 +36,6 @@
 
 
                         <div class="form-group">
-                            <label for="tr_tgl_pinjam"><strong>Tanggal Peminjaman</strong></label>
-                            <input type="date" value="<?= $date_now ?>" class="form-control" name="tr_tgl_pinjam" id="tr_tgl_pinjam">
-                        </div>
-
-
-                        <div class="form-group">
                             <label for="tr_kelas_peminjam"><strong>Kelas</strong></label>
                             <select name="tr_kelas_peminjam" id="tr_kelas_peminjam" class="form-control">
                                 <option value="" selected disabled>--Pilih Kelas--</option>
@@ -49,6 +43,17 @@
                                 <option value="XI">XI</option>
                                 <option value="XII">XII</option>
                             </select>
+                        </div>
+
+                        
+                        <div class="form-group">
+                            <label for="tr_tgl_pinjam"><strong>Tanggal Peminjaman</strong></label>
+                            <input type="date" value="<?= $date_now ?>" class="form-control" name="tr_tgl_pinjam" id="tr_tgl_pinjam">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="dt_tgl_kembali"><strong>Tanggal Pengembalian</strong></label>
+                            <input type="date"  value="<?=$date_one_year?>" class="form-control" name="dt_tgl_kembali" id="dt_tgl_kembali">
                         </div>
 
 
@@ -122,23 +127,8 @@
     $(document).ready(function() {
         $('#tr_kelas_peminjam').change(function() {
             var agt_kode = $('#tr_kelas_peminjam').val();
-            $.ajax({
-                url: "<?php echo base_url('peminjaman/test'); ?>",
-                method: "POST",
-                data: {
-                    kelas: kelas
-                },
-                dataType: 'json',
-                success: function(data) {
-                    // var html = '<option selected disabled>Pilih Dokter...</option>';
-                    // for (var count = 0; count < data.length; count++) {
-                    //     html += '<option value="' + data[count].d_id + '">' + data[count].d_nama_spesialis + '</option>'
-                    // }
-
-                    // $('#d_id').html(html);
-                }
-            });
-
+            
+            alert(agt_kode);
         });
 
     });
