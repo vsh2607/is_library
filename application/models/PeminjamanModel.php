@@ -3,18 +3,20 @@
 class PeminjamanModel extends CI_Model
 {
 
-   
+
     public function dateNow()
     {
         return date('Y-m-d');
     }
 
-    public function oneYearFromNow(){
-       
+    public function oneYearFromNow()
+    {
+
         return  date('Y-m-d', strtotime('+182 day'));
     }
-    
-    public function oneWeekFromNow(){
+
+    public function oneWeekFromNow()
+    {
         return  date('Y-m-d', strtotime('+7 day'));
     }
 
@@ -68,20 +70,36 @@ class PeminjamanModel extends CI_Model
     }
 
 
-    public function reduceJumlahTransaksiNP($kodeTransaksi){
+    public function reduceJumlahTransaksiNP($kodeTransaksi)
+    {
         $this->db->select('tr_jumlah_transaksi')->from('transaksi');
         $this->db->where('tr_kode', $kodeTransaksi);
-        
+
         $totalTransaksi = $this->db->get()->row()->tr_jumlah_transaksi;
 
         $data = [
-            'tr_jumlah_transaksi' => (int)$totalTransaksi - 1  
+            'tr_jumlah_transaksi' => (int)$totalTransaksi - 1
         ];
 
         $this->db->where('tr_kode', $kodeTransaksi);
         $this->db->update('transaksi', $data);
+    }
 
-        
+
+    public function pinjamPaket()
+    {
+        $post = $this->input->post();
+
+        $data = [
+            'tr_tgl_pinjam' => $this->input->post('tr_tgl_pinjam'),
+            'agt_kode' => $this->input->post('agt_kode'),
+            'tr_kelas_peminjam' => $this->input->post('tr_kelas_peminjam'),
+            'tr_created' => time()
+
+        ];
+
+        $this->db->insert('transaksi', $data);
+        $topData =  $this->getLatestPinjamData();
     }
 
 

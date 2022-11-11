@@ -4,6 +4,10 @@
 class BukuModel extends CI_Model
 {
 
+    public function getBukuPaketKelas($kelas)
+    {
+        return $this->db->get_where('buku_paket', ['bkp_kelas' => $kelas])->result_array();
+    }
 
 
     //add Buku paket
@@ -70,7 +74,7 @@ class BukuModel extends CI_Model
     public function edit($noIdBuku)
     {
 
-        
+
         $data = [
             'bkp_no_induk' => $this->input->post('bkp_no_induk'),
             'bkp_kategori_buku' => $this->input->post('bkp_kategori_buku'),
@@ -86,7 +90,6 @@ class BukuModel extends CI_Model
 
         $this->db->where('bkp_no_induk', $noIdBuku);
         $this->db->update('buku_paket', $data);
-
     }
 
     public function editN($noIdBuku)
@@ -107,6 +110,5 @@ class BukuModel extends CI_Model
 
         $this->db->where('bnp_id', $noIdBuku);
         $this->db->update('buku_non_paket', $data);
-
     }
 }

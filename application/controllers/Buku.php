@@ -11,6 +11,13 @@ class Buku extends CI_Controller
         $this->load->model('BukuModel');
     }
 
+    public function getBukuPaketX(){
+
+        var_dump( $this->db->get_where('buku_paket', ['bkp_kelas'=>'X']));
+        die();
+        return $this->db->get_where('buku_paket', ['bkp_kelas'=>'X']);
+    }
+
     //user data
     private function userData()
     {

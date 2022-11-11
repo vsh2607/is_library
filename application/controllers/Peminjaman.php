@@ -52,7 +52,10 @@ class Peminjaman extends CI_Controller
         $data['title'] = 'Menu Perpus Sanjaya';
         $data['date_now'] = $this->PeminjamanModel->dateNow();
         $data['date_one_year'] = $this->PeminjamanModel->oneYearFromNow();
-       
+        $data['buku_x'] = $this->BukuModel->getBukuPaketKelas('X');
+        $data['buku_xi'] = $this->BukuModel->getBukuPaketKelas('XI');
+        $data['buku_xii'] = $this->BukuModel->getBukuPaketKelas('XII');
+
         if ($data['staff'] === null) {
             $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
             Login terlebih dahulu!
@@ -160,16 +163,25 @@ class Peminjaman extends CI_Controller
         }
     }
 
+    //Function untuk pinjam buku paket
     public  function pinjamPaket()
     {
+        $data['staff'] = $this->userData();
+        $data['title'] = 'Menu Perpus Sanjaya';
+
+        if ($data['staff'] === null) {
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+            Login terlebih dahulu!
+            </div>');
+
+            redirect('auth');
+        } else {
+
+            $this->PeminjamanModel->pinjamPaket();
+            redirect('peminjaman/show_p');
+        }
     }
 
-    public function test()
-    {
-        $data_buku = $this->input->post('kelas', TRUE);
-        $data = $this->db->get_where('');
-        echo json_encode($data);
-    }
 
 
     public function pinjamNonPaket()
