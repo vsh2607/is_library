@@ -68,6 +68,22 @@
 
                         </tr>
                     </thead>
+<!--                     
+Nama
+Kelas
+Tanggal Pinjam
+Tanggal Kembali
+
+List buku pinjam
+x1 -> Tanggal kembali
+x2 -> Tanggal kembali
+x3 -> Tanggal kembali
+x4 -> Tanggal kembali -->
+
+
+
+
+
 
                     <tbody>
                         <?php $no = 1;
