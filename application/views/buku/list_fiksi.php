@@ -10,8 +10,8 @@
                 <div class="col-5">
                     <h6 class="m-0 font-weight-bold text-primary">Daftar Buku Non Paket<span></span></h6>
                     <br>
-                    <!-- <a class="btn btn-primary btn-sm" href="<?= base_url() ?>buku/index2"><small>Buku Non Paket</small></a> |
-                    <a class="btn btn-primary btn-sm" href="<?= base_url() ?>buku"><small>Buku Paket</small></a> -->
+                    <a class="btn btn-primary btn-sm" href="<?= base_url() ?>buku/index2"><small>Buku Non Paket</small></a> |
+                    <a class="btn btn-primary btn-sm" href="<?= base_url() ?>buku"><small>Buku Paket</small></a>
 
                 </div>
                 <div class="col-3"></div>
@@ -96,12 +96,12 @@ x4 -> Tanggal kembali -->
                                 <td class="align-middle text-center bnp_klasifikasi"><?= $db['bnp_klasifikasi'] ?></td>
                                 <td class="align-middle text-center bnp_sumber_asal"><?= $db['bnp_sumber_asal'] ?></td>
                                 <td class="align-middle text-center bnp_bahasa"><?= $db['bnp_bahasa'] ?></td>
-                                <td class="align-middle text-center bnp_macams"><?= $db['bnp_macam'] ?></td>
+                                <td class="align-middle text-center bnp_macam"><?= $db['bnp_macam'] ?></td>
                                 <td class="align-middle text-center bnp_jumlah_buku"><?= $db['bnp_jumlah_buku'] ?></td>
                                 <td class="bnp_id" style="display:none;"><?=$db['bnp_id']?></td>
                                 <td class="align-middle text-center">
                                     <!--Edit-->
-                                    <a href="#" data-toggle="modal" data-target="#updateModal" class="btn btn-sm btn-warning"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                    <a href="#" data-toggle="modal" data-target="#updateModal" class="btn btn-sm btn-warning btn_update"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                                         <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
                                         <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
                                     </svg></a>
@@ -124,9 +124,36 @@ x4 -> Tanggal kembali -->
 
     <script>
         $(document).ready(function(){
+
             $(document).on('click', '.btn_delete', function(){
-                var kode = $(this).closest('tr').find('.bnp_id').text();
-                alert(kode);
+                var bnp_id = $(this).closest('tr').find('.bnp_id').text();
+                let link = document.getElementById('btn_hapus');
+                link.href = "<?=base_url()?>buku/deleteN/" + bnp_id.trim();
+            });
+
+
+            $(document).on('click', '.btn_update', function(){
+                var bnp_id = $(this).closest('tr').find('.bnp_id').text();
+                var bnp_no_inventaris = $(this).closest('tr').find('.bnp_no_inventaris').text();
+                var bnp_judul_buku = $(this).closest('tr').find('.bnp_judul_buku').text();
+                var bnp_pengarang = $(this).closest('tr').find('.bnp_pengarang').text();
+                var bnp_klasifikasi = $(this).closest('tr').find('.bnp_klasifikasi').text();
+                var bnp_sumber_asal = $(this).closest('tr').find('.bnp_sumber_asal').text();
+                var bnp_bahasa = $(this).closest('tr').find('.bnp_bahasa').text();
+                var bnp_macam = $(this).closest('tr').find('.bnp_macam').text();
+                var bnp_jumlah_buku = $(this).closest('tr').find('.bnp_jumlah_buku').text();
+
+                document.getElementById('bnp_no_inventaris').value = bnp_no_inventaris;
+                document.getElementById('bnp_judul_buku').value = bnp_judul_buku;
+                document.getElementById('bnp_pengarang').value = bnp_pengarang;
+                document.getElementById('bnp_klasifikasi').value = bnp_klasifikasi;
+                document.getElementById('bnp_sumber_asal').value = bnp_sumber_asal;
+                document.getElementById('bnp_bahasa').value = bnp_bahasa;
+                document.getElementById('bnp_macam').value = bnp_macam;
+                document.getElementById('bnp_jumlah_buku').value = bnp_jumlah_buku;
+                document.getElementById('form-update').action = "<?=base_url()?>buku/editN/"+bnp_id.trim();
+
+               
             })
         });
     </script>
@@ -144,7 +171,7 @@ x4 -> Tanggal kembali -->
 
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-danger" href="">Delete</a>
+                    <a class="btn btn-danger" id="btn_hapus" href="">Delete</a>
                 </div>
             </div>
         </div>
@@ -164,27 +191,27 @@ x4 -> Tanggal kembali -->
                 </div>
                 <div class="modal-body">
                     <?php if ($db['bnp_id'] !== null) { ?>
-                        <form action="<?= base_url() ?>buku/editn/<?= $db['bnp_id'] ?>" method="post" enctype="multipart/form-data">
+                        <form action="" id="form-update" method="post" enctype="multipart/form-data">
 
                             <div class="form-group">
                                 <label for="bnp_no_inventaris"><strong>No Inventaris Buku</strong></label>
-                                <input type="number" class="form-control" id="bnp_no_inventaris" name="bnp_no_inventaris" value="<?= $db['bnp_no_inventaris'] ?>" required>
+                                <input type="number" class="form-control" id="bnp_no_inventaris" name="bnp_no_inventaris" value="" required>
 
                             </div>
 
                             <div class="form-group">
                                 <label for="bnp_judul_buku"><strong>Judul Buku</strong></label>
-                                <input type="text" class="form-control " id="bnp_judul_buku" name="bnp_judul_buku" value="<?= $db['bnp_judul_buku'] ?>" required>
+                                <input type="text" class="form-control " id="bnp_judul_buku" name="bnp_judul_buku" value="" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="bnp_pengarang"><strong>Pengarang</strong></label>
-                                <input type="text" class="form-control " id="bnp_pengarang" name="bnp_pengarang" value="<?= $db['bnp_pengarang'] ?>" required>
+                                <input type="text" class="form-control " id="bnp_pengarang" name="bnp_pengarang" value="" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="bnp_klasifikasi"><strong>Klasifikasi</strong></label>
-                                <input type="text" class="form-control " id="bnp_klasifikasi" name="bnp_klasifikasi" value="<?= $db['bnp_klasifikasi'] ?>" required>
+                                <input type="text" class="form-control " id="bnp_klasifikasi" name="bnp_klasifikasi" value="" required>
                             </div>
 
 
@@ -212,25 +239,25 @@ x4 -> Tanggal kembali -->
                                     <option selected disabled>Pilih Bahasa...</option>
                                     <option value="teks">Teks</option>
                                     <option value="fakta">Fakta</option>
-                                    <option value="Fiksi">Fiksi</option>
-                                    <option value="Info">Info</option>
+                                    <option value="fiksi">Fiksi</option>
+                                    <option value="info">Info</option>
                                 </select>
                             </div>
 
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label for="bnp_harga"><strong>Harga</strong></label>
-                                <input type="number" class="form-control " id="bnp_harga" name="bnp_harga" value="<?= $db['bnp_harga'] ?>">
+                                <input type="number" class="form-control " id="bnp_harga" name="bnp_harga" value="">
                             </div>
 
                             <div class="form-group">
                                 <label for="bnp_keterangan"><strong>Keterangan</strong></label>
-                                <input type="text" class="form-control " id="bnp_keterangan" name="bnp_keterangan" value="<?= $db['bnp_keterangan'] ?>">
-                            </div>
+                                <input type="text" class="form-control " id="bnp_keterangan" name="bnp_keterangan" value="">
+                            </div> -->
 
 
                             <div class="form-group">
                                 <label for="bnp_jumlah_buku"><strong>Jumlah Buku</strong></label>
-                                <input type="number" class="form-control " id="bnp_jumlah_buku" name="bnp_jumlah_buku" value="<?= $db['bnp_jumlah_buku'] ?>">
+                                <input type="number" class="form-control " id="bnp_jumlah_buku" name="bnp_jumlah_buku" value="">
                             </div>
                 </div>
                 <div class="modal-footer">

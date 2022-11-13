@@ -38,6 +38,7 @@ class AnggotaModel extends CI_Model
 
     public function add($anggotaImgUrl)
     {
+       
 
         $data = [
             'agt_img_url' => $anggotaImgUrl,

@@ -89,6 +89,9 @@ class PeminjamanModel extends CI_Model
     public function pinjamPaket()
     {
         $post = $this->input->post();
+        $tgl_kembali = $this->input->post('dt_tgl_kembali');
+
+   
 
         $data = [
             'tr_tgl_pinjam' => $this->input->post('tr_tgl_pinjam'),
@@ -98,8 +101,33 @@ class PeminjamanModel extends CI_Model
 
         ];
 
+        
         $this->db->insert('transaksi', $data);
         $topData =  $this->getLatestPinjamData();
+        
+        
+        $totalBukuPaketPinjaman = 0;
+        for($i = 0; $i < count($post['bkp_judul_buku']); $i++){
+            $dataDetail = [
+                'dt_denda' => 0,
+                'tr_kode' => $topData->tr_kode,
+                'bkp_no_induk' => $post['bkp_judul_buku'][$i],
+                'bnp_id' => null,
+                'dt_tgl_kembali' => $tgl_kembali,
+                'dt_is_returned' => '0'
+            ];
+            $totalBukuPaketPinjaman++;
+  
+            $this->db->insert('detail_transaksi', $dataDetail);
+
+            $dataUpdate = [
+                'tr_jumlah_transaksi' => $totalBukuPaketPinjaman
+            ];
+    
+    
+            $this->db->where('tr_kode', $topData->tr_kode);
+            $this->db->update('transaksi', $dataUpdate);
+        }
 
     }
 
@@ -123,7 +151,7 @@ class PeminjamanModel extends CI_Model
         $topData =  $this->getLatestPinjamData();
 
         $totalBuku = 0;
-        for ($i = 0; $i < count($post['bkp_no_induk']); $i++) {
+        for ($i = 0; $i < count($post['bnp_id']); $i++) {
             $dataDetail = [
                 'dt_denda' => 0,
                 'tr_kode' => $topData->tr_kode,

@@ -28,7 +28,7 @@
                 table = document.getElementById("myTable");
                 tr = table.getElementsByTagName("tr");
                 for (i = 0; i < tr.length; i++) {
-                    td = tr[i].getElementsByTagName("td")[2];
+                    td = tr[i].getElementsByTagName("td")[5];
                     if (td) {
                         txtValue = td.textContent || td.innerText;
                         if (txtValue.toUpperCase().indexOf(filter) > -1) {
@@ -69,7 +69,11 @@
                             <tr>
                                 <td class="align-middle text-center"><?= $no++ ?></td>
                                 <td class="align-middle text-center">
-                                    <img src="<?= base_url() ?>assets/images/anggota/<?= $da['agt_img_url'] ?>" alt="" width="75" height="100">
+                                    <?php if ($da['agt_img_url'] == 'nopicture.jpg') { ?>
+                                        <img src="<?= base_url() ?>assets/images/<?= $da['agt_img_url'] ?>" alt="" width="75" height="100">
+                                    <?php } else { ?>
+                                        <img src="<?= base_url() ?>assets/images/anggota/<?= $da['agt_img_url'] ?>" alt="" width="75" height="100">
+                                    <?php } ?>
                                 </td>
 
                                 <td class="align-middle text-center agt_img_url" style="display:none;"> <?= $da['agt_img_url'] ?></td>

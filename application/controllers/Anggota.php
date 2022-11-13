@@ -10,7 +10,8 @@ class Anggota extends CI_Controller
         $this->load->model('AnggotaModel');
     }
 
-    public function coba(){
+    public function coba()
+    {
         $this->load->view('transaksi/test');
     }
 
@@ -50,12 +51,11 @@ class Anggota extends CI_Controller
                     $latestImgUrl = $this->upload->data('file_name');
                     $this->AnggotaModel->edit($anggotaImgUrl, $latestImgUrl);
                     redirect('anggota');
-                }else{
+                } else {
 
                     $latestImgUrl = null;
                     $this->AnggotaModel->edit($anggotaImgUrl, $latestImgUrl);
                     redirect('anggota');
-                    
                 }
             }
         }
@@ -132,16 +132,14 @@ class Anggota extends CI_Controller
 
                 $this->load->library('upload', $config);
 
-                if (@$_FILES['agt_img_url']['name'] !== null) {
-                    if ($this->upload->do_upload('agt_img_url')) {
-                        $anggotaImgUrl = $this->upload->data('file_name');
-                        $this->AnggotaModel->add($anggotaImgUrl);
+                if ($this->upload->do_upload('agt_img_url')) {
+                    $anggotaImgUrl = $this->upload->data('file_name');
+                    $this->AnggotaModel->add($anggotaImgUrl);
 
-                        redirect('anggota');
-                    }
+                    redirect('anggota');
                 } else {
-                    $imgUrl = null;
-                    $this->Anggota->add($imgUrl);
+                    $imgUrl = 'nopicture.jpg';
+                    $this->AnggotaModel->add($imgUrl);
                     redirect('anggota');
                 }
             }

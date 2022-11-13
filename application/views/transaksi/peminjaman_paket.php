@@ -100,27 +100,6 @@
 
             </div>
         </div>
-        <!-- 
-        <div class="col-6">
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <div class="row">
-                        <div class="col-5">
-                            <h6 class="m-0 font-weight-bold text-primary">List Peminjaman Buku</h6>
-                        </div>
-                        <div class="col-2"></div>
-                        <div class="col-5">
-                            <div class="input-group">
-                                <input type="text" class="form-control" id="myInput" onkeyup="myFunction()" placeholder="Cari Peminjaman...">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body">
-
-                </div>
-            </div>
-        </div> -->
     </div>
 </div>
 
@@ -143,7 +122,9 @@
 
                     rows += "<tr>" +
                         "<td>" +
-                        "<input value='<?= $bx['bkp_judul_buku'] ?>' name='bkp_judul_buku[]' class='form-control'>" +
+                        "<input type='text' value='<?= $bx['bkp_judul_buku'] ?>' name='bkp_judul_buku[]' class='form-control' disabled>" +
+                        "<input type='hidden' value='<?= $bx['bkp_no_induk'] ?>' name='bkp_judul_buku[]' class='form-control'>" +
+                        "<input type='hidden' value='<?= $bx['bkp_no_induk'] ?>'  name='bkp_judul_buku[]' class='form-control'>" +
                         "</td>" +
 
                         "<td>" +
@@ -154,38 +135,41 @@
 
                 <?php endforeach; ?>
             } else if (kelas == 'XI') {
-              
-                    <?php foreach ($buku_xi as $bxi) :  ?>
 
-                        rows += "<tr>" +
-                            "<td>" +
-                            "<input value='<?= $bxi['bkp_judul_buku'] ?>' name='bkp_judul_buku[]' class='form-control'>" +
-                            "</td>" +
+                <?php foreach ($buku_xi as $bxi) :  ?>
 
-                            "<td>" +
-                            "<button class='btn btn-danger btn-sm' onclick = deleterow(this)>Delete</button>" +
-                            "</td>" +
+                    rows += "<tr>" +
+                        "<td>" +
+                        "<input type='text' value='<?= $bxi['bkp_judul_buku'] ?>' name='bkp_judul_buku[]' class='form-control' disabled>" +
+                        "<input type='hidden' value='<?= $bxi['bkp_no_induk'] ?>' name='bkp_judul_buku[]' class='form-control'>" +
 
-                            "</tr>";
+                        "</td>" +
 
-                    <?php endforeach; ?>
-              
+                        "<td>" +
+                        "<button class='btn btn-danger btn-sm' onclick = deleterow(this)>Delete</button>" +
+                        "</td>" +
+
+                        "</tr>";
+
+                <?php endforeach; ?>
+
             } else if (kelas == 'XII') {
-             
-                    <?php foreach ($buku_xii as $bxii) :  ?>
 
-                        rows += "<tr>" +
-                            "<td>" +
-                            "<input value='<?= $bxii['bkp_judul_buku'] ?>' name='bkp_judul_buku[]' class='form-control'>" +
-                            "</td>" +
+                <?php foreach ($buku_xii as $bxii) :  ?>
 
-                            "<td>" +
-                            "<button class='btn btn-danger btn-sm' onclick = deleterow(this)>Delete</button>" +
-                            "</td>" +
+                    rows += "<tr>" +
+                        "<td>" +
+                        "<input type='text' value='<?= $bxii['bkp_judul_buku'] ?>' name='bkp_judul_buku[]' class='form-control' disabled>" +
+                        "<input type='hidden' value='<?= $bxii['bkp_no_induk'] ?>' name='bkp_judul_buku[]' class='form-control'>" +
+                        "</td>" +
 
-                            "</tr>";
+                        "<td>" +
+                        "<button class='btn btn-danger btn-sm' onclick = deleterow(this)>Delete</button>" +
+                        "</td>" +
 
-                    <?php endforeach; ?>
+                        "</tr>";
+
+                <?php endforeach; ?>
             }
             // alert(rows);
             $(rows).appendTo("#list tbody");

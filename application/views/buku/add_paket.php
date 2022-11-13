@@ -26,13 +26,12 @@
                             <label for="bkp_kategori_buku"><strong>Kategori Buku</strong></label>
                             <select id="bkp_kategori_buku" class="form-control" name="bkp_kategori_buku">
                                 <option selected disabled>Pilih Kategori...</option>
-                                <option value="Fks">Fiksi</option>
-                                <option value="PA">Pendidikan Agama</option>
-                                <option value="PPKN">PPKN</option>
-                                <option value="Bind">Bahasa Indonesia</option>
-                                <option value="Bing">Bahasa Inggris</option>
-                                <option value="Mtk">Matematika</option>
-                                <option value="EkA">Ekonomi Akuntansi</option>
+                                <option value="Pendidikan Agama">Pendidikan Agama</option>
+                                    <option value="PPKN">PPKN</option>
+                                    <option value="Bahasa Indonesia">Bahasa Indonesia</option>
+                                    <option value="Bahasa Inggris">Bahasa Inggris</option>
+                                    <option value="Matematika">Matematika</option>
+                                    <option value="Ekonomi Akuntansi">Ekonomi Akuntansi</option>
                             </select>
                             <?= form_error('bkp_kategori_buku', '<small class="text-danger pl-3">', '</small>') ?>
                         </div>

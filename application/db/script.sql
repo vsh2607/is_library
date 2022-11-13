@@ -34,13 +34,13 @@ create table staff(
 
 create table buku_paket(
     bkp_no_induk varchar(100) not null primary key,
-    bkp_kategori_buku enum('Fks', 'PA', 'PPKN', 'Bind', 'Bing', 'Mtk', 'EkA', 'Sej', 'Sos', 'Geo', 'Senbud', 'TIK', 'PKWU', 'PJOK', 'Bio', 'Fisika', 'Jawa'),
+    bkp_kategori_buku enum('Pendidikan Agama', 'PPKN', 'Bahasa Indonesia', 'Bahasa Inggris', 'Matematika', 'Ekonomi Akuntansi', 'Sejarah', 'Sosial', 'Geografi', 'Seni Budaya', 'TIK', 'PKWU', 'PJOK', 'Biologi', 'Fisika', 'Jawa'),
     bkp_judul_buku varchar(200) not null,
     bkp_pengarang  varchar(200) not null,
     bkp_penerbit varchar(200) not null,
     bkp_tahun_terbit int not null,
     bkp_kelas enum('X', 'XI', 'XII', 'None') not null,
-    bkp_sumber_asal enum('beli', 'bantuan') not null,
+    bkp_sumber_asal enum('Beli', 'Bantuan') not null,
     bkp_jumlah_buku int not null
 
 );

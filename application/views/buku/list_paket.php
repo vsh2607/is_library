@@ -1,7 +1,9 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
-
+    <!-- perpus21
+    l)#7v5snyBlXRZ!gsMGF -->
+    <!-- MkzTmf4@!RHbYLXZa$yG -->
 
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
@@ -73,24 +75,24 @@
                         foreach ($data_buku as $db) : ?>
                             <tr>
                                 <td class="align-middle text-center"><?= $no++ ?></td>
-                                <td class="align-middle text-center"><?= $db['bkp_no_induk'] ?></td>
-                                <td class="align-middle text-center"><?= $db['bkp_judul_buku'] ?></td>
-                                <td class="align-middle text-center"><?= $db['bkp_kategori_buku'] ?></td>
-                                <td class="align-middle text-center"><?= $db['bkp_pengarang'] ?></td>
-                                <td class="align-middle text-center"><?= $db['bkp_penerbit'] ?></td>
-                                <td class="align-middle text-center"><?= $db['bkp_tahun_terbit'] ?></td>
-                                <td class="align-middle text-center"><?= $db['bkp_sumber_asal'] ?></td>
-                                <td class="align-middle text-center"><?= $db['bkp_kelas'] ?></td>
-                                <td class="align-middle text-center"><?= $db['bkp_jumlah_buku'] ?></td>
+                                <td class="align-middle text-center bkp_no_induk"><?= $db['bkp_no_induk'] ?></td>
+                                <td class="align-middle text-center bkp_judul_buku"><?= $db['bkp_judul_buku'] ?></td>
+                                <td class="align-middle text-center bkp_kategori_buku"><?= $db['bkp_kategori_buku'] ?></td>
+                                <td class="align-middle text-center bkp_pengarang"><?= $db['bkp_pengarang'] ?></td>
+                                <td class="align-middle text-center bkp_penerbit"><?= $db['bkp_penerbit'] ?></td>
+                                <td class="align-middle text-center bkp_tahun_terbit"><?= $db['bkp_tahun_terbit'] ?></td>
+                                <td class="align-middle text-center bkp_sumber_asal"><?= $db['bkp_sumber_asal'] ?></td>
+                                <td class="align-middle text-center bkp_kelas"><?= $db['bkp_kelas'] ?></td>
+                                <td class="align-middle text-center bkp_jumlah_buku"><?= $db['bkp_jumlah_buku'] ?></td>
                                 <td class="align-middle text-center">
                                     <!--Update-->
-                                    <a href="#" data-toggle="modal" data-target="#updateModal" class="btn btn-sm btn-warning"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                    <a href="#" data-toggle="modal" data-target="#updateModal" class="btn btn-sm btn-warning btn_update"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                                             <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
                                             <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
                                         </svg></a>
 
                                     <!--Delete-->
-                                    <a href="#" data-toggle="modal" data-target="#deleteModal" class="btn btn-sm btn-danger"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                    <a href="#" data-toggle="modal" data-target="#deleteModal" class="btn btn-sm btn-danger btn_delete"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                                             <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
                                             <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
                                         </svg></a>
@@ -100,6 +102,48 @@
 
                         <?php endforeach; ?>
                     </tbody>
+
+
+                    <script>
+                        $(document).ready(function() {
+
+
+                            $(document).on('click', '.btn_delete', function() {
+
+                                var bkp_no_induk = $(this).closest('tr').find('.bkp_no_induk').text();
+                                let link = document.getElementById('btn_hapus');
+                                link.href = "<?= base_url() ?>buku/delete/" + bkp_no_induk.trim();
+                            });
+
+
+
+                            $(document).on('click', '.btn_update', function() {
+                                var bkp_judul_buku = $(this).closest('tr').find('.bkp_judul_buku').text();
+                                var bkp_kategori_buku = $(this).closest('tr').find('.bkp_kategori_buku').text();
+                                var bkp_pengarang = $(this).closest('tr').find('.bkp_pengarang').text();
+                                var bkp_penerbit = $(this).closest('tr').find('.bkp_penerbit').text();
+                                var bkp_tahun_terbit = $(this).closest('tr').find('.bkp_tahun_terbit').text();
+                                var bkp_sumber_asal = $(this).closest('tr').find('.bkp_sumber_asal').text();
+                                var bkp_kelas = $(this).closest('tr').find('.bkp_kelas').text();
+                                var bkp_jumlah_buku = $(this).closest('tr').find('.bkp_jumlah_buku').text();
+
+                                document.getElementById('bkp_no_induk').value = bkp_no_induk;
+                                document.getElementById('bkp_judul_buku').value = bkp_judul_buku;
+                                document.getElementById('bkp_kategori_buku').value = bkp_kategori_buku;
+                                document.getElementById('bkp_pengarang').value = bkp_pengarang;
+                                document.getElementById('bkp_penerbit').value = bkp_penerbit;
+                                document.getElementById('bkp_tahun_terbit').value = bkp_tahun_terbit;
+                                document.getElementById('bkp_sumber_asal').value = bkp_sumber_asal;
+                                document.getElementById('bkp_kelas').value = bkp_kelas;
+                                document.getElementById('bkp_jumlah_buku').value = bkp_jumlah_buku;
+                                document.getElementById('formBukuUpdate').action = "<?= base_url() ?>buku/edit/" + bkp_no_induk.trim();
+
+
+
+                            })
+
+                        });
+                    </script>
 
                 </table>
             </div>
@@ -139,69 +183,68 @@
                 </div>
                 <div class="modal-body">
                     <?php if ($db['bkp_no_induk'] !== null) { ?>
-                        <form action="<?= base_url() ?>buku/edit/<?= $db['bkp_no_induk'] ?>" method="post" enctype="multipart/form-data">
+                        <form id="formBukuUpdate" action="" method="post" enctype="multipart/form-data">
 
 
                             <div class="form-group">
                                 <label for="bkp_no_induk"><strong>No ID Buku</strong></label>
-                                <input type="number" class="form-control" id="bkp_no_induk" name="bkp_no_induk" value="<?= $db['bkp_no_induk'] ?>">
+                                <input type="number" class="form-control" id="bkp_no_induk" name="bkp_no_induk" value="">
                                 <?= form_error('bkp_no_induk', '<small class="text-danger pl-3">', '</small>') ?>
                             </div>
 
                             <div class="form-group">
                                 <label for="bkp_kategori_buku"><strong>Kategori Buku</strong></label>
                                 <select id="bkp_kategori_buku" class="form-control" name="bkp_kategori_buku">
-                                    <option selected disabled>Pilih Kategori...</option>
-                                    <option value="Fks">Fiksi</option>
-                                    <option value="PA">Pendidikan Agama</option>
+                                    <option selected id="bkp_kategori_buku" value=""></option>
+                                    <option value="Pendidikan Agama">Pendidikan Agama</option>
                                     <option value="PPKN">PPKN</option>
-                                    <option value="Bind">Bahasa Indonesia</option>
-                                    <option value="Bing">Bahasa Inggris</option>
-                                    <option value="Mtk">Matematika</option>
-                                    <option value="EkA">Ekonomi Akuntansi</option>
+                                    <option value="Bahasa Indonesia">Bahasa Indonesia</option>
+                                    <option value="Bahasa Inggris">Bahasa Inggris</option>
+                                    <option value="Matematika">Matematika</option>
+                                    <option value="Ekonomi Akuntansi">Ekonomi Akuntansi</option>
                                 </select>
                                 <?= form_error('bkp_kategori_buku', '<small class="text-danger pl-3">', '</small>') ?>
                             </div>
 
                             <div class="form-group">
                                 <label for="bkp_judul_buku"><strong>Judul Buku</strong></label>
-                                <input type="text" class="form-control " id="bkp_judul_buku" name="bkp_judul_buku" value="<?= $db['bkp_judul_buku'] ?>">
+                                <input type="text" class="form-control " id="bkp_judul_buku" name="bkp_judul_buku" value="">
                                 <?= form_error('bkp_judul_buku', '<small class="text-danger pl-3">', '</small>') ?>
 
                             </div>
 
                             <div class="form-group">
                                 <label for="bkp_pengarang"><strong>Pengarang</strong></label>
-                                <input type="text" class="form-control " id="bkp_pengarang" name="bkp_pengarang" value="<?= $db['bkp_pengarang'] ?>">
+                                <input type="text" class="form-control " id="bkp_pengarang" name="bkp_pengarang" value="">
                                 <?= form_error('bkp_pengarang', '<small class="text-danger pl-3">', '</small>') ?>
                             </div>
 
                             <div class="form-group">
                                 <label for="bkp_penerbit"><strong>Penerbit</strong></label>
-                                <input type="text" class="form-control " id="bkp_penerbit" name="bkp_penerbit" value="<?= $db['bkp_penerbit'] ?>">
+                                <input type="text" class="form-control " id="bkp_penerbit" name="bkp_penerbit" value="">
                                 <?= form_error('bkp_penerbit', '<small class="text-danger pl-3">', '</small>') ?>
 
                             </div>
 
                             <div class="form-group">
                                 <label for="bkp_tahun_terbit"><strong>Tahun Terbit</strong></label>
-                                <input type="number" class="form-control " id="bkp_tahun_terbit" name="bkp_tahun_terbit" value="<?= $db['bkp_tahun_terbit'] ?>">
+                                <input type="number" class="form-control " id="bkp_tahun_terbit" name="bkp_tahun_terbit" value="">
                                 <?= form_error('bkp_tahun_terbit', '<small class="text-danger pl-3">', '</small>') ?>
                             </div>
 
                             <div class="form-group">
                                 <label for="bkp_sumber_asal"><strong>Sumber Asal</strong></label>
-                                <select id="bkp_sumber_asal" class="form-control" name="bkp_sumber_asal" value="<?= $db['bkp_sumber_asal'] ?>">
+                                <select id="bkp_sumber_asal" class="form-control" name="bkp_sumber_asal" value="">
                                     <option selected disabled>Pilih Sumber Asal...</option>
-                                    <option value="beli">Beli</option>
-                                    <option value="bantuan">Bantuan</option>
+                                    <option value="Beli">Beli</option>
+                                    <option value="Bantuan">Bantuan</option>
                                 </select>
                                 <?= form_error('bkp_sumber_asal', '<small class="text-danger pl-3">', '</small>') ?>
                             </div>
 
                             <div class="form-group">
                                 <label for="bkp_kelas"><strong>Kelas Buku</strong></label>
-                                <select id="bkp_kelas" class="form-control" name="bkp_kelas" value="<?= set_value('bkp_kelas') ?>">
+                                <select id="bkp_kelas" class="form-control" name="bkp_kelas" value="">
                                     <option selected disabled>Pilih Kelas Buku...</option>
                                     <option value="None">None</option>
                                     <option value="X">X</option>
@@ -213,7 +256,7 @@
 
                             <div class="form-group">
                                 <label for="bkp_jumlah_buku"><strong>Jumlah Buku</strong></label>
-                                <input type="number" class="form-control " id="bkp_jumlah_buku" name="bkp_jumlah_buku" value="<?= $db['bkp_jumlah_buku'] ?>">
+                                <input type="number" class="form-control " id="bkp_jumlah_buku" name="bkp_jumlah_buku" value="">
                                 <?= form_error('bkp_jumlah_buku', '<small class="text-danger pl-3">', '</small>') ?>
                             </div>
                 </div>
