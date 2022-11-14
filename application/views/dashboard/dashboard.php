@@ -12,7 +12,7 @@
 
             <div class="jumbotron">
             <div class="text-center">
-                    <img src="<?= base_url() ?>assets/img/logo.jpg" height="220" width="140" alt="">
+                    <img src="<?= base_url() ?>assets/img/logo.jpg" style="border-radius: 5%;" height="220" width="140" alt="">
                     <p></p>
                     
                 </div>
