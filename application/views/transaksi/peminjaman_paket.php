@@ -20,7 +20,7 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label for="agt_nama"><strong>Nama Anggota</strong></label>
-                            <select name="agt_kode" id="agt_kode" class="form-control">
+                            <select name="agt_kode" id="agt_kode" class="form-control" required>
                                 <option value="" selected disabled>Pilih Anggota...</option>
                                 <?php foreach ($data_anggota as $da) : ?>
                                     <option value="<?= $da['agt_kode'] ?>"><?= $da['agt_nama'] ?></option>
@@ -35,7 +35,7 @@
                             <div class="row">
                                 <div class="col-10">
                                     <label for="tr_kelas_peminjam"><strong>Kelas</strong></label>
-                                    <select name="tr_kelas_peminjam" id="tr_kelas_peminjam" class="form-control">
+                                    <select name="tr_kelas_peminjam" id="tr_kelas_peminjam" class="form-control" required>
                                         <option value="" selected disabled>--Pilih Kelas--</option>
                                         <option value="X">X</option>
                                         <option value="XI">XI</option>
@@ -56,12 +56,12 @@
 
                         <div class="form-group">
                             <label for="tr_tgl_pinjam"><strong>Tanggal Peminjaman</strong></label>
-                            <input type="date" value="<?= $date_now ?>" class="form-control" name="tr_tgl_pinjam" id="tr_tgl_pinjam">
+                            <input type="date" value="<?= $date_now ?>" class="form-control" name="tr_tgl_pinjam" id="tr_tgl_pinjam" required>
                         </div>
 
                         <div class="form-group">
                             <label for="dt_tgl_kembali"><strong>Tanggal Pengembalian</strong></label>
-                            <input type="date" value="<?= $date_one_year ?>" class="form-control" name="dt_tgl_kembali" id="dt_tgl_kembali">
+                            <input type="date" value="<?= $date_one_year ?>" class="form-control" name="dt_tgl_kembali" id="dt_tgl_kembali" required>
                         </div>
 
 
@@ -124,7 +124,6 @@
                         "<td>" +
                         "<input type='text' value='<?= $bx['bkp_judul_buku'] ?>' name='bkp_judul_buku[]' class='form-control' disabled>" +
                         "<input type='hidden' value='<?= $bx['bkp_no_induk'] ?>' name='bkp_judul_buku[]' class='form-control'>" +
-                        "<input type='hidden' value='<?= $bx['bkp_no_induk'] ?>'  name='bkp_judul_buku[]' class='form-control'>" +
                         "</td>" +
 
                         "<td>" +

@@ -40,6 +40,20 @@ class PeminjamanModel extends CI_Model
         return $result;
     }
 
+    public function getTransaksiPaket(){
+        $this->db->select('*')->from('transaksi');
+        $this->db->join('anggota', 'anggota.agt_kode = transaksi.agt_kode');
+        $this->db->join('detail_transaksi', 'detail_transaksi.tr_kode = transaksi.tr_kode');
+        $this->db->where('bnp_id', null);
+        $this->db->group_by('transaksi.tr_kode');
+        $this->db->order_by('tr_jumlah_transaksi', 'DESC');
+
+        $result =  $this->db->get()->result_array();
+        
+
+        return $result;
+    }
+
 
     public function getTransaksiNonPaket()
     {
@@ -89,22 +103,21 @@ class PeminjamanModel extends CI_Model
     public function pinjamPaket()
     {
         $post = $this->input->post();
+        
         $tgl_kembali = $this->input->post('dt_tgl_kembali');
 
    
-
         $data = [
             'tr_tgl_pinjam' => $this->input->post('tr_tgl_pinjam'),
             'agt_kode' => $this->input->post('agt_kode'),
             'tr_kelas_peminjam' => $this->input->post('tr_kelas_peminjam'),
             'tr_created' => time()
-
         ];
 
         
         $this->db->insert('transaksi', $data);
         $topData =  $this->getLatestPinjamData();
-        
+     
         
         $totalBukuPaketPinjaman = 0;
         for($i = 0; $i < count($post['bkp_judul_buku']); $i++){

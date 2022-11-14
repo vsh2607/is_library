@@ -157,6 +157,7 @@ class Peminjaman extends CI_Controller
             redirect('auth');
         } else {
 
+            $data['data_buku_paket'] = $this->PeminjamanModel->getTransaksiPaket();
             $this->load->view('templates/menu_header', $data);
             $this->load->view('transaksi/list_peminjaman_paket', $data);
             $this->load->view('templates/menu_footer');

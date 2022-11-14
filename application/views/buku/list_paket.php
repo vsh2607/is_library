@@ -118,6 +118,8 @@
 
 
                             $(document).on('click', '.btn_update', function() {
+
+                                var bkp_no_induk = $(this).closest('tr').find('.bkp_no_induk').text();
                                 var bkp_judul_buku = $(this).closest('tr').find('.bkp_judul_buku').text();
                                 var bkp_kategori_buku = $(this).closest('tr').find('.bkp_kategori_buku').text();
                                 var bkp_pengarang = $(this).closest('tr').find('.bkp_pengarang').text();
@@ -188,7 +190,7 @@
 
                             <div class="form-group">
                                 <label for="bkp_no_induk"><strong>No ID Buku</strong></label>
-                                <input type="number" class="form-control" id="bkp_no_induk" name="bkp_no_induk" value="">
+                                <input type="number" class="form-control" id="bkp_no_induk" name="bkp_no_induk" readonly value="">
                                 <?= form_error('bkp_no_induk', '<small class="text-danger pl-3">', '</small>') ?>
                             </div>
 
