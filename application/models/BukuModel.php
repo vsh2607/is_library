@@ -10,6 +10,19 @@ class BukuModel extends CI_Model
     }
 
 
+
+    public function getTotalBukuPaket(){
+        $this->db->select('bkp_no_induk');
+        $this->db->from('buku_paket');
+        return $this->db->count_all_results();
+    }
+
+    public function getTotalBukuNonPaket(){
+        $this->db->select('bnp_id');
+        $this->db->from('buku_non_paket');
+        return $this->db->count_all_results();
+    }
+    
     //add Buku paket
     public function add()
     {

@@ -3,6 +3,12 @@
 
 class Dashboard extends CI_Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('AnggotaModel');
+        $this->load->model('BukuModel');
+    }
 
     private function userData()
     {
@@ -14,6 +20,9 @@ class Dashboard extends CI_Controller
         $data['staff'] = $this->userData();
         $data['page_title'] = 'Dashboard';
         $data['title'] = 'Menu Perpus Sanjaya';
+        $data['total_anggota'] = $this->AnggotaModel->getTotalAnggota();
+        $data['total_buku_paket'] = $this->BukuModel->getTotalBukuPaket();
+        $data['total_buku_nonpaket'] = $this->BukuModel->getTotalBukuNonPaket();
 
 
         if ($data['staff'] === null) {

@@ -10,6 +10,8 @@ class Anggota extends CI_Controller
         $this->load->model('AnggotaModel');
     }
 
+   
+
     public function coba()
     {
         $this->load->view('transaksi/test');

@@ -123,7 +123,7 @@
                     rows += "<tr>" +
                         "<td>" +
                         "<input type='text' value='<?= $bx['bkp_judul_buku'] ?>' name='bkp_judul_buku[]' class='form-control' disabled>" +
-                        "<input type='hidden' value='<?= $bx['bkp_no_induk'] ?>' name='bkp_judul_buku[]' class='form-control'>" +
+                        "<input type='hidden' value='<?= $bx['bkp_no_induk'] ?>' name='bkp_no_induk[]' class='form-control'>" +
                         "</td>" +
 
                         "<td>" +
@@ -139,8 +139,8 @@
 
                     rows += "<tr>" +
                         "<td>" +
-                        "<input type='text' value='<?= $bxi['bkp_judul_buku'] ?>' name='bkp_judul_buku[]' class='form-control' disabled>" +
-                        "<input type='hidden' value='<?= $bxi['bkp_no_induk'] ?>' name='bkp_judul_buku[]' class='form-control'>" +
+                        "<input type='text' value='<?= $bxi['bkp_judul_buku'] ?>' class='form-control' disabled>" +
+                        "<input type='hidden' value='<?= $bxi['bkp_no_induk'] ?>' name='bkp_no_induk[]' class='form-control'>" +
 
                         "</td>" +
 
@@ -159,7 +159,7 @@
                     rows += "<tr>" +
                         "<td>" +
                         "<input type='text' value='<?= $bxii['bkp_judul_buku'] ?>' name='bkp_judul_buku[]' class='form-control' disabled>" +
-                        "<input type='hidden' value='<?= $bxii['bkp_no_induk'] ?>' name='bkp_judul_buku[]' class='form-control'>" +
+                        "<input type='hidden' value='<?= $bxii['bkp_no_induk'] ?>' name='bkp_no_induk[]' class='form-control'>" +
                         "</td>" +
 
                         "<td>" +

@@ -5,6 +5,13 @@ class AnggotaModel extends CI_Model
 {
 
 
+    public function getTotalAnggota(){
+        $this->db->select('agt_nama');
+        $this->db->from('anggota');
+        return  $this->db->count_all_results();
+
+    }
+
     public function edit($anggotaImgUrl, $latestImgUrl)
     {
 

@@ -171,6 +171,8 @@ class PeminjamanModel extends CI_Model
     public function pinjamPaket()
     {
         $post = $this->input->post();
+      
+        
         
         $tgl_kembali = $this->input->post('dt_tgl_kembali');
 
@@ -188,11 +190,11 @@ class PeminjamanModel extends CI_Model
      
         
         $totalBukuPaketPinjaman = 0;
-        for($i = 0; $i < count($post['bkp_judul_buku']); $i++){
+        for($i = 0; $i < count($post['bkp_no_induk']); $i++){
             $dataDetail = [
                 'dt_denda' => 0,
                 'tr_kode' => $topData->tr_kode,
-                'bkp_no_induk' => $post['bkp_judul_buku'][$i],
+                'bkp_no_induk' => $post['bkp_no_induk'][$i],
                 'bnp_id' => null,
                 'dt_tgl_kembali' => $tgl_kembali,
                 'dt_is_returned' => '0'
@@ -200,6 +202,8 @@ class PeminjamanModel extends CI_Model
             $totalBukuPaketPinjaman++;
   
             $this->db->insert('detail_transaksi', $dataDetail);
+
+            $this->reduceJumlahBukuP($post['bkp_no_induk'][$i]);
 
             $dataUpdate = [
                 'tr_jumlah_transaksi' => $totalBukuPaketPinjaman
@@ -255,6 +259,19 @@ class PeminjamanModel extends CI_Model
         $this->db->update('transaksi', $dataUpdate);
     }
 
+
+    public function reduceJumlahBukuP($noIdBuku){
+        $this->db->select('bkp_jumlah_buku');
+        $this->db->where('bkp_no_induk', $noIdBuku);
+        $totalBuku = $this->db->get('buku_paket')->row();
+
+        $data =
+            ['bkp_jumlah_buku' => (int)$totalBuku->bkp_jumlah_buku - 1];
+
+
+        $this->db->where('bkp_no_induk', $noIdBuku);
+        $this->db->update('buku_paket', $data);
+    }
 
     public function reduceJumlahBukuNP($noIdBuku)
     {
