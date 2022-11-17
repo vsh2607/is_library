@@ -34,6 +34,7 @@
                             <th class="align-middle text-center">Kelas</th>
                             <th class="align-middle text-center">Tanggal Peminjaman</th>
                             <th class="align-middle text-center">Tanggal Kembali</th>
+                            <th class="align-middle text-center">Jumlah Buku Dipinjam</th>
                             <th class="align-middle text-center">Status Pinjaman</th>
                             <th class="align-middle text-center">Aksi</th>
 
@@ -50,6 +51,7 @@
                                 <td class="align-middle text-center"><?= $dbp['tr_kelas_peminjam'] ?></td>
                                 <td class="align-middle text-center"><?= $dbp['tr_tgl_pinjam'] ?></td>
                                 <td class="align-middle text-center"><?= $dbp['dt_tgl_kembali'] ?></td>
+                                <td class="align-middle text-center"><?= $dbp['tr_jumlah_transaksi'] ?></td>
                                 <td class="align-middle text-center">
                                     <?php if ($dbp['tr_jumlah_transaksi'] > 0) { ?>
                                         <small class="text-danger"><strong>MASIH MEMINJAM</strong></small>
@@ -60,7 +62,7 @@
                                     <?php } ?>
                                 </td>
                                 <td class="align-middle text-center">
-                                    <a href="" class="btn btn-info btn-sm detail_btn">Detail Pinjaman</a>
+                                    <a href="<?=base_url()?>peminjaman/showDetail_p/<?=$dbp['tr_kode']?>" class="btn btn-info btn-sm detail_btn">Detail Pinjaman</a>
 
                                 </td>
                             </tr>

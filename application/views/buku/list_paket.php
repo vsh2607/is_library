@@ -141,7 +141,6 @@
                                 document.getElementById('formBukuUpdate').action = "<?= base_url() ?>buku/edit/" + bkp_no_induk.trim();
 
 
-
                             })
 
                         });
@@ -205,7 +204,7 @@
                                     <option value="Matematika">Matematika</option>
                                     <option value="Ekonomi Akuntansi">Ekonomi Akuntansi</option>
                                 </select>
-                                <?= form_error('bkp_kategori_buku', '<small class="text-danger pl-3">', '</small>') ?>
+                                
                             </div>
 
                             <div class="form-group">

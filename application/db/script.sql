@@ -61,6 +61,17 @@ create table buku_non_paket(
 );
 
 
+
+
+
+-- - Ubah data buku paket & non paket
+-- (Hilang atau dibuat fungsi baru)
+-- - Pengaturan
+-- - Account
+-- - Dashboard
+-- - List peminjaman buku paket
+
+
 create table transaksi(
   tr_kode int not null primary key auto_increment,
   tr_tgl_pinjam date,

@@ -97,6 +97,34 @@ class Peminjaman extends CI_Controller
     }
 
 
+    public function showDetail_p($kodeTransaksi)
+    {
+        $data['staff'] = $this->userData();
+        $data['title'] = 'Menu Perpus Sanjaya';
+        $data['date_now'] = $this->PeminjamanModel->dateNow();
+
+        if ($data['staff'] === null) {
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+            Login terlebih dahulu!
+            </div>');
+
+            redirect('auth');
+        } else {
+
+
+            $data['transaksi_detail_paket'] = $this->PeminjamanModel->getDetailTransaksiPaket($kodeTransaksi);
+            $data['transaksi_detail_paket_row'] = $this->PeminjamanModel->getDetailTransaksiPaketRow($kodeTransaksi);
+
+
+            $this->load->view('templates/menu_header', $data);
+            $this->load->view('transaksi/detail_peminjaman_paket', $data);
+            $this->load->view('templates/menu_footer');
+        }
+    }
+
+
+
+
 
     public function showDetail_np($kodeTransaksi)
     {
@@ -122,6 +150,25 @@ class Peminjaman extends CI_Controller
     }
 
 
+    public function returnBukuP()
+    {
+        $data['staff'] = $this->userData();
+        $data['title'] = 'Menu Perpus Sanjaya';
+        $data['date_now'] = $this->PeminjamanModel->dateNow();
+
+        if ($data['staff'] === null) {
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+    Login terlebih dahulu!
+    </div>');
+
+            redirect('auth');
+        } else {
+
+            $this->PeminjamanModel->returnBukuP();
+           redirect('peminjaman/show_p');
+        }
+    }
+
 
     public function returnBukuNP($noIdBuku, $kodeTransaksi, $noDetailTransaksi)
     {
@@ -142,7 +189,7 @@ class Peminjaman extends CI_Controller
 
 
 
-    #Untuk menampilkan list buku peminjaman non paket
+    #Untuk menampilkan list buku peminjaman paket
     public function show_p()
     {
         $data['staff'] = $this->userData();

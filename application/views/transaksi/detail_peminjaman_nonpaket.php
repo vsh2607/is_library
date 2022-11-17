@@ -58,11 +58,19 @@
                                 <th class="align-middle text-center"><small><?= $tdnp['agt_nama'] ?></small></th>
                                 <th class="align-middle text-center"><small><?= $tdnp['bnp_judul_buku'] ?></small></th>
                                 <th class="align-middle text-center"><small><?= $tdnp['dt_tgl_kembali'] ?></small></th>
-                                <th class="align-middle text-center"><small>Rp.<?= $tdnp['dt_denda'] ?></small></th>
+                                <th class="align-middle text-center"><small>
+                                        <?php if ($tdnp['diff'] < 0) { ?>
+                                            Rp.<?= (int)$tdnp['diff'] * -1 * 1000; ?>
+                                        <?php } else { ?>
+                                                Rp.0
+                                        <?php } ?>
+                                    </small></th>
+
+
                                 <?php if ($tdnp['dt_is_returned'] == '0') { ?>
                                     <th class="align-middle text-center"><small class="text-danger"><strong>Belum Kembali</strong></small></th>
                                     <th class="align-middle text-center">
-                                        <a href="<?=base_url()?>peminjaman/returnBukuNP/<?=$tdnp['bnp_id']?>/<?=$tdnp['tr_kode']?>/<?=$tdnp['dt_kode']?>" class="btn btn-sm btn-warning">Kembalikan</a>
+                                        <a href="<?= base_url() ?>peminjaman/returnBukuNP/<?= $tdnp['bnp_id'] ?>/<?= $tdnp['tr_kode'] ?>/<?= $tdnp['dt_kode'] ?>" class="btn btn-sm btn-warning">Kembalikan</a>
                                     </th>
 
                                 <?php } else { ?>
