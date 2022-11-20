@@ -12,8 +12,8 @@
                 <div class="col-5">
                     <h6 class="m-0 font-weight-bold text-primary">Daftar Buku Paket<span></span></h6>
                     <br>
-                    <a class="btn btn-primary btn-sm" href="<?= base_url() ?>buku/index2"><small>Buku Non Paket</small></a> |
-                    <a class="btn btn-primary btn-sm" href="<?= base_url() ?>buku"><small>Buku Paket</small></a>
+                    <a class="btn btn-primary btn-sm" href="<?= base_url() ?>buku/index2"><small>Buku Non Paket</small></a>
+                    <!-- <a class="btn btn-primary btn-sm" href="<?= base_url() ?>buku"><small>Buku Paket</small></a> -->
 
                 </div>
                 <div class="col-3"></div>
@@ -164,7 +164,7 @@
 
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-danger" href="<?= base_url() ?>buku/delete/<?= $db['bkp_no_induk'] ?>">Delete</a>
+                    <a class="btn btn-danger" id="btn_hapus" href="">Delete</a>
                 </div>
             </div>
         </div>
@@ -189,8 +189,7 @@
 
                             <div class="form-group">
                                 <label for="bkp_no_induk"><strong>No ID Buku</strong></label>
-                                <input type="number" class="form-control" id="bkp_no_induk" name="bkp_no_induk" readonly value="">
-                                <?= form_error('bkp_no_induk', '<small class="text-danger pl-3">', '</small>') ?>
+                                <input type="text" class="form-control" id="bkp_no_induk" name="bkp_no_induk" readonly value="">
                             </div>
 
                             <div class="form-group">
@@ -204,7 +203,7 @@
                                     <option value="Matematika">Matematika</option>
                                     <option value="Ekonomi Akuntansi">Ekonomi Akuntansi</option>
                                 </select>
-                                
+
                             </div>
 
                             <div class="form-group">

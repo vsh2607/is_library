@@ -23,6 +23,7 @@ class Dashboard extends CI_Controller
         $data['total_anggota'] = $this->AnggotaModel->getTotalAnggota();
         $data['total_buku_paket'] = $this->BukuModel->getTotalBukuPaket();
         $data['total_buku_nonpaket'] = $this->BukuModel->getTotalBukuNonPaket();
+        
 
 
         if ($data['staff'] === null) {

@@ -1,3 +1,8 @@
+<?php
+
+$time = date('Y-m-d');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -87,7 +92,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Menu Buku Non Paket:</h6>
                         <a class="collapse-item" href="<?= base_url() ?>buku/index2">Daftar Buku Non Paket</a>
-                        <a class="collapse-item" href="<?= base_url() ?>buku/addN">Tambah Buku Paket</a>
+                        <a class="collapse-item" href="<?= base_url() ?>buku/addN">Tambah Buku Non Paket</a>
 
                         <h6 class="collapse-header">Menu Buku Paket:</h6>
                         <a class="collapse-item" href="<?= base_url() ?>buku">Daftar Buku Paket</a>
@@ -131,12 +136,12 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Menu Transaksi</h6>
                         <a class="collapse-item" href="<?= base_url() ?>peminjaman">Pinjam</a>
-                        <a class="collapse-item" href="<?=base_url()?>peminjaman/show_np">List Pinjam</a>
+                        <a class="collapse-item" href="<?= base_url() ?>peminjaman/show_np">List Pinjam</a>
                     </div>
                 </div>
             </li>
-          
-          
+
+
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages2" aria-expanded="true" aria-controls="collapsePages">
@@ -146,8 +151,8 @@
                 <div id="collapsePages2" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Menu Transaksi</h6>
-                        <a class="collapse-item" href="<?=base_url()?>peminjaman/index2">Pinjam</a>
-                        <a class="collapse-item" href="<?=base_url()?>peminjaman/show_p">List Pinjam</a>
+                        <a class="collapse-item" href="<?= base_url() ?>peminjaman/index2">Pinjam</a>
+                        <a class="collapse-item" href="<?= base_url() ?>peminjaman/show_p">List Pinjam</a>
                     </div>
                 </div>
             </li>
@@ -180,16 +185,41 @@
                     </button>
 
                     <!-- Topbar Search -->
-                    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                    <!-- <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                             <input list="search" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                            <input list="search"  class="form-control bg-light border-0 small"  name="browser" id="browser">
+
+                            <datalist id="search">
+                                <option value="Edge1">List Anggota</option>
+                                <option value="Edge2">Tambah Anggota</option>
+                                <option value="Edge3">List Buku</option>
+                                <option value="Edge4">Tambah Buku</option>
+                            </datalist>
                             <div class="input-group-append">
                                 <button class="btn btn-primary" type="button">
                                     <i class="fas fa-search fa-sm"></i>
                                 </button>
                             </div>
                         </div>
-                    </form>
+                    </form> -->
+
+                    <script>
+                        var span = document.getElementById('span');
+
+                        function time() {
+                            var d = new Date();
+                            var s = d.getSeconds();
+                            var m = d.getMinutes();
+                            var h = d.getHours();
+                            span.textContent =
+                                ("0" + h).substr(-2) + ":" + ("0" + m).substr(-2) + ":" + ("0" + s).substr(-2);
+                        }
+
+                        setInterval(time, 1000);
+                    </script>
+                    <h5>Date &nbsp; : &nbsp;<?= $time ?></h5>
+                </strong><span id="span"></span>
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -202,14 +232,7 @@
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
-                                </a>
+
 
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">

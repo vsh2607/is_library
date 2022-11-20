@@ -2,7 +2,7 @@
 <div class="container-fluid">
 
     <style>
-        a.disabled {
+        button.disabled {
             pointer-events: none;
             cursor: default;
         }
@@ -47,7 +47,7 @@
                         <tr>
 
                             <th class="align-middle text-center">Judul Buku</th>
-                           
+
                         </tr>
                     </thead>
 
@@ -58,10 +58,11 @@
 
                                 <tr>
 
-                                    <td><small><?= $tdp['bkp_judul_buku'] ?></small></td>
+                                    <th><?= $tdp['bkp_judul_buku'] ?></th>
                                     <input type="hidden" name="bkp_no_induk[]" value="<?= $tdp['bkp_no_induk'] ?>">
                                     <input type="hidden" name="dt_kode[]" value="<?= $tdp['dt_kode'] ?>">
                                     <input type="hidden" name="tr_kode[]" value="<?= $tdp['tr_kode'] ?>">
+                                    <input type="hidden" name="agt_kode[]" value="<?=$tdp['agt_kode']?>">
                                 </tr>
                     </tbody>
 
@@ -73,7 +74,14 @@
         </div>
 
         <div class="card-footer">
-            <button class="btn btn-danger btn-sm float-end">Kembalikan Semua Buku</button>
+            <?php if ($tdp['tr_jumlah_transaksi'] <= 0) { ?>
+                <button class="btn btn-secondary btn-sm float-end disabled">Kembalikan Semua Buku</button>
+            <?php } else { ?>
+
+                <button class="btn btn-danger btn-sm float-end">Kembalikan Semua Buku</button>
+
+            <?php } ?>
+
         </div>
         </form>
     </div>

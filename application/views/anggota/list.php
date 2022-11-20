@@ -55,6 +55,8 @@
                             <th class="align-middle text-center">Tanggal Lahir</th>
                             <th class="align-middle text-center">Alamat</th>
                             <th class="align-middle text-center">No. Telp</th>
+                            <!-- <th class="align-middle text-center">Jumlah Pinjam Paket</th>
+                            <th class="align-middle text-center">Jumlah Pinjam Non Paket</th> -->
                             <th class="align-middle text-center">Aksi</th>
                         </tr>
                     </thead>
@@ -83,6 +85,8 @@
                                 <td class="align-middle text-center agt_dob"><?= $da['agt_dob'] ?></td>
                                 <td class="align-middle text-center agt_alamat"><?= $da['agt_alamat'] ?></td>
                                 <td class="align-middle text-center agt_no_telp"><?= $da['agt_no_telp'] ?></td>
+                                <!-- <td class="align-middle text-center agt_no_telp"><?= $da['agt_jumlah_pinjam_p'] ?></td>
+                                <td class="align-middle text-center agt_no_telp"><?= $da['agt_jumlah_pinjam_np'] ?></td> -->
                                 <td class="align-middle text-center">
                                     <!--Edit-->
                                     <a href="#" data-toggle="modal" data-target="#updateModal" class="btn btn-sm btn-warning btn_edit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">

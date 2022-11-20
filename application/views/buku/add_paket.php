@@ -18,7 +18,7 @@
 
                         <div class="form-group">
                             <label for="bkp_no_induk"><strong>No ID Buku</strong></label>
-                            <input type="number" class="form-control" id="bkp_no_induk" name="bkp_no_induk" value="<?= set_value('bkp_no_induk') ?>">
+                            <input type="text" class="form-control" id="bkp_no_induk" name="bkp_no_induk" value="<?= set_value('bkp_no_induk') ?>">
                             <?= form_error('bkp_no_induk', '<small class="text-danger pl-3">', '</small>') ?>
                         </div>
 

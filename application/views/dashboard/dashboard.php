@@ -1,37 +1,26 @@
+<style>
+    table {
+        overflow-y: scroll;
+        height: 100px;
+        display: block;
+    }
+</style>
+
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <!-- <h1 class="h3 mb-0 text-gray-800">Dashboard</h1> -->
+        <h1 class="h3 mb-0 text-gray-800">Selamat Datang di SI PERPUS</h1>
 
     </div>
 
-    <div class="row">
-        <div class="container">
 
-            <div class="jumbotron">
-                <div class="text-center">
-                    <img src="<?= base_url() ?>assets/img/logo.jpg" style="border-radius: 5%;" height="220" width="140" alt="">
-                    <p></p>
-
-                </div>
-                <h1 class="display-3 align-middle text-center">Selamat Datang!</h1>
-                <p class="lead align-midlle text-center">Sistem Informasi Perpustakaan SMA Sanjaya XIV Nanggulan</p>
-                <p>
-
-
-                </p>
-            </div>
-
-
-        </div>
-    </div>
     <!-- Content Row -->
     <div class="row">
 
         <!-- Earnings (Monthly) Card Example -->
-        <div class="col-xl-3 col-md-6 mb-4">
+        <div class="col-xl-4 col-md-6 mb-4">
             <div class="card border-left-primary shadow h-100 py-2">
                 <a href="<?= base_url() ?>anggota">
                     <div class="card-body">
@@ -52,7 +41,7 @@
 
         <!-- Earnings (Monthly) Card Example -->
 
-        <div class="col-xl-3 col-md-6 mb-4">
+        <div class="col-xl-4 col-md-6 mb-4">
             <div class="card border-left-success shadow h-100 py-2">
                 <a href="<?= base_url() ?>buku">
                     <div class="card-body">
@@ -74,7 +63,7 @@
         <!-- Earnings (Monthly) Card Example -->
 
 
-        <div class="col-xl-3 col-md-6 mb-4">
+        <div class="col-xl-4 col-md-6 mb-4">
             <div class="card border-left-warning shadow h-100 py-2">
                 <a href="<?= base_url() ?>buku/index2">
                     <div class="card-body">
@@ -105,7 +94,49 @@
     <!-- Content Row -->
 
     <div class="row">
+        <div class="col-6">
+            <div class="card" style="height: 400px;">
+                <div class="card-header">
 
+                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                        List Siswa Terlambat Mengembalikan Buku</div>
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered align-center" style="height: 300px;">
+                        <thead>
+                            <tr>
+                                <th>Nama</th>
+                                <th>Jumlah Hari Terlambat</th>
+                                <th>Detail</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                                <tr>
+                                    <td>Valentino Sas Henry</td>
+                                    <td>12 Hari</td>
+                                    <td><a href="" class="btn btn-warning">Cek Detail</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Valentino Sas Henry</td>
+                                    <td>12 Hari</td>
+                                    <td><a href="" class="btn btn-warning">Cek Detail</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Valentino Sas Henry</td>
+                                    <td>12 Hari</td>
+                                    <td><a href="" class="btn btn-warning">Cek Detail</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Valentino Sas Henry</td>
+                                    <td>12 Hari</td>
+                                    <td><a href="" class="btn btn-warning">Cek Detail</a></td>
+                                </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
 
 

@@ -10,7 +10,7 @@
                 <div class="col-5">
                     <h6 class="m-0 font-weight-bold text-primary">Daftar Buku Non Paket<span></span></h6>
                     <br>
-                    <a class="btn btn-primary btn-sm" href="<?= base_url() ?>buku/index2"><small>Buku Non Paket</small></a> |
+                    <!-- <a class="btn btn-primary btn-sm" href="<?= base_url() ?>buku/index2"><small>Buku Non Paket</small></a> | -->
                     <a class="btn btn-primary btn-sm" href="<?= base_url() ?>buku"><small>Buku Paket</small></a>
 
                 </div>
