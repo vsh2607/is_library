@@ -37,7 +37,7 @@ class Peminjaman extends CI_Controller
         } else {
 
             $data['data_anggota'] = $this->AnggotaModel->getAllData();
-            $data['data_buku_nonpaket'] = $this->BukuModel->getAllNonPaket();
+            $data['data_buku_nonpaket'] = $this->BukuModel->getAllNonPaketNonZero();
             $this->load->view('templates/menu_header', $data);
             $this->load->view('transaksi/peminjaman_nonpaket', $data);
             $this->load->view('templates/menu_footer');
