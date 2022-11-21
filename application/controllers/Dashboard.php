@@ -9,6 +9,7 @@ class Dashboard extends CI_Controller
         $this->load->model('AnggotaModel');
         $this->load->model('BukuModel');
         $this->load->model('PeminjamanModel');
+        $this->load->helper('download');
     }
 
     private function userData()
@@ -16,6 +17,13 @@ class Dashboard extends CI_Controller
         $data['staff'] = $this->db->get_where('staff', ['st_username' => $this->session->userdata('st_username')])->row_array();
         return $data['staff'];
     }
+
+    public function download()
+    {
+        force_download('assets/files/Modul.pdf', NULL);
+    }
+
+
     public function index()
     {
         $data['staff'] = $this->userData();
@@ -25,7 +33,7 @@ class Dashboard extends CI_Controller
         $data['total_buku_paket'] = $this->BukuModel->getTotalBukuPaket();
         $data['total_buku_nonpaket'] = $this->BukuModel->getTotalBukuNonPaket();
         $data['buku_terlambat'] = $this->PeminjamanModel->getLate();
-        
+
 
 
         if ($data['staff'] === null) {

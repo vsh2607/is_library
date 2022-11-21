@@ -114,15 +114,15 @@
                         </thead>
 
                         <tbody>
-                            <?php foreach($buku_terlambat as $bt) :?>
-                            <tr>
-                                <td><?=$bt['agt_nama']?></td>
-                                <td class="text-danger"><?=$bt['diff']?> Hari</td>
-                                <td><?=$bt['bnp_judul_buku']?></td>
-                                <td>Rp.<?= (int)$bt['diff']  * 1000; ?></td>
-                                <td><a href="<?=base_url()?>peminjaman/showDetail_np/<?=$bt['tr_kode']?>" class="badge badge-warning badge-sm">Cek Detail</a></td>
-                            </tr>
-                           <?php endforeach;?>
+                            <?php foreach ($buku_terlambat as $bt) : ?>
+                                <tr>
+                                    <td><?= $bt['agt_nama'] ?></td>
+                                    <td class="text-danger"><?= $bt['diff'] ?> Hari</td>
+                                    <td><?= $bt['bnp_judul_buku'] ?></td>
+                                    <td>Rp.<?= (int)$bt['diff']  * 1000; ?></td>
+                                    <td><a href="<?= base_url() ?>peminjaman/showDetail_np/<?= $bt['tr_kode'] ?>" class="badge badge-warning badge-sm">Cek Detail</a></td>
+                                </tr>
+                            <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>
@@ -134,14 +134,17 @@
                 <div class="card-header">
 
                     <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                       !</div>
+                        Modul Penggunaan</div>
                 </div>
                 <div class="card-body">
-                   
+
                 </div>
 
                 <div class="card-footer">
-                    <a href="" class="btn btn-sm btn-success float-right">Unduh</a>
+                    <a href="<?=base_url()?>dashboard/download" class="btn btn-sm btn-success float-right"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
+                            <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
+                        </svg> Unduh</a>
                 </div>
             </div>
         </div>
