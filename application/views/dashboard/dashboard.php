@@ -102,11 +102,12 @@
                         List Siswa Terlambat Mengembalikan Buku</div>
                 </div>
                 <div class="card-body">
-                    <table class="table table-bordered align-center" style="height: 300px;">
+                    <table class="table table-bordered table-hover align-center" style="height: 300px;">
                         <thead>
                             <tr>
                                 <th>Nama</th>
                                 <th>Jumlah Hari Terlambat</th>
+                                <th>Judul Buku</th>
                                 <th>Detail</th>
                             </tr>
                         </thead>
@@ -115,22 +116,26 @@
                                 <tr>
                                     <td>Valentino Sas Henry</td>
                                     <td>12 Hari</td>
-                                    <td><a href="" class="btn btn-warning">Cek Detail</a></td>
+                                    <td>Hari Merdeka</td>
+                                    <td><a href="" class="btn btn-warning btn-sm">Cek Detail</a></td>
                                 </tr>
                                 <tr>
                                     <td>Valentino Sas Henry</td>
                                     <td>12 Hari</td>
-                                    <td><a href="" class="btn btn-warning">Cek Detail</a></td>
+                                    <td>Hari Merdeka</td>
+                                    <td><a href="" class="btn btn-warning btn-sm">Cek Detail</a></td>
                                 </tr>
                                 <tr>
                                     <td>Valentino Sas Henry</td>
                                     <td>12 Hari</td>
-                                    <td><a href="" class="btn btn-warning">Cek Detail</a></td>
+                                    <td>Hari Merdeka</td>
+                                    <td><a href="" class="btn btn-warning btn-sm">Cek Detail</a></td>
                                 </tr>
                                 <tr>
                                     <td>Valentino Sas Henry</td>
                                     <td>12 Hari</td>
-                                    <td><a href="" class="btn btn-warning">Cek Detail</a></td>
+                                    <td>Hari Merdeka</td>
+                                    <td><a href="" class="btn btn-warning btn-sm">Cek Detail</a></td>
                                 </tr>
                         </tbody>
                     </table>
