@@ -99,46 +99,49 @@
                 <div class="card-header">
 
                     <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                        List Siswa Terlambat Mengembalikan Buku</div>
+                        List Siswa Terlambat Mengembalikan Buku Non-Paket</div>
                 </div>
                 <div class="card-body">
                     <table class="table table-bordered table-hover align-center" style="height: 300px;">
                         <thead>
                             <tr>
                                 <th>Nama</th>
-                                <th>Jumlah Hari Terlambat</th>
+                                <th>Hari Terlambat</th>
                                 <th>Judul Buku</th>
+                                <th>Denda</th>
                                 <th>Detail</th>
                             </tr>
                         </thead>
 
                         <tbody>
-                                <tr>
-                                    <td>Valentino Sas Henry</td>
-                                    <td>12 Hari</td>
-                                    <td>Hari Merdeka</td>
-                                    <td><a href="" class="btn btn-warning btn-sm">Cek Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Valentino Sas Henry</td>
-                                    <td>12 Hari</td>
-                                    <td>Hari Merdeka</td>
-                                    <td><a href="" class="btn btn-warning btn-sm">Cek Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Valentino Sas Henry</td>
-                                    <td>12 Hari</td>
-                                    <td>Hari Merdeka</td>
-                                    <td><a href="" class="btn btn-warning btn-sm">Cek Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Valentino Sas Henry</td>
-                                    <td>12 Hari</td>
-                                    <td>Hari Merdeka</td>
-                                    <td><a href="" class="btn btn-warning btn-sm">Cek Detail</a></td>
-                                </tr>
+                            <?php foreach($buku_terlambat as $bt) :?>
+                            <tr>
+                                <td><?=$bt['agt_nama']?></td>
+                                <td class="text-danger"><?=$bt['diff']?> Hari</td>
+                                <td><?=$bt['bnp_judul_buku']?></td>
+                                <td>Rp.<?= (int)$bt['diff']  * 1000; ?></td>
+                                <td><a href="<?=base_url()?>peminjaman/showDetail_np/<?=$bt['tr_kode']?>" class="badge badge-warning badge-sm">Cek Detail</a></td>
+                            </tr>
+                           <?php endforeach;?>
                         </tbody>
                     </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="card" style="height: 350px;">
+                <div class="card-header">
+
+                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                       !</div>
+                </div>
+                <div class="card-body">
+                   
+                </div>
+
+                <div class="card-footer">
+                    <a href="" class="btn btn-sm btn-success float-right">Unduh</a>
                 </div>
             </div>
         </div>

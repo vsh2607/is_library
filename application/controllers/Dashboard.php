@@ -8,6 +8,7 @@ class Dashboard extends CI_Controller
         parent::__construct();
         $this->load->model('AnggotaModel');
         $this->load->model('BukuModel');
+        $this->load->model('PeminjamanModel');
     }
 
     private function userData()
@@ -23,6 +24,7 @@ class Dashboard extends CI_Controller
         $data['total_anggota'] = $this->AnggotaModel->getTotalAnggota();
         $data['total_buku_paket'] = $this->BukuModel->getTotalBukuPaket();
         $data['total_buku_nonpaket'] = $this->BukuModel->getTotalBukuNonPaket();
+        $data['buku_terlambat'] = $this->PeminjamanModel->getLate();
         
 
 

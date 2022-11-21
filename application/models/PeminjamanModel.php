@@ -4,6 +4,26 @@ class PeminjamanModel extends CI_Model
 {
 
 
+    // select *, datediff(dt_tgl_kembali, now()) as diff from anggota join transaksi 
+    // on transaksi.agt_kode = anggota.agt_kode join detail_transaksi 
+    // on detail_transaksi.tr_kode = transaksi.tr_kode where(dt_tgl_kembali, now()) < 0
+
+    public function getLate(){
+        $this->db->select('*, datediff( now(), dt_tgl_kembali) as diff')->from('anggota');
+        $this->db->join('transaksi', 'transaksi.agt_kode = anggota.agt_kode');
+        $this->db->join('detail_transaksi', 'detail_transaksi.tr_kode = transaksi.tr_kode');
+        $this->db->join('buku_non_paket', 'buku_non_paket.bnp_id = detail_transaksi.bnp_id');
+        $this->db->where('detail_transaksi.bkp_no_induk', null);
+        $this->db->where('datediff( now(), dt_tgl_kembali) >', 0);
+        $this->db->where('dt_is_returned', '0');
+        $result = $this->db->get()->result_array();
+        return $result;
+        
+    }
+
+
+
+
     public function dateNow()
     {
         return date('Y-m-d');
