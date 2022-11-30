@@ -43,7 +43,9 @@ class BukuModel extends CI_Model
 
     public function getAllPaket()
     {
-        return $this->db->get('buku_paket')->result_array();
+      	$this->db->select('*')->from('buku_paket');
+      	$this->db->order_by('bkp_kelas', 'asc');
+        return $this->db->get()->result_array();
     }
 
 
@@ -51,12 +53,11 @@ class BukuModel extends CI_Model
     {
         return $this->db->get('buku_non_paket')->result_array();
     }
-
-
+  
     public function getAllNonPaketNonZero(){
-        $this->db->select('*')->from('buku_non_paket');
+    	$this->db->select('*')->from('buku_non_paket');
         $this->db->where('bnp_jumlah_buku >', 0);
-        return $this->db->get();
+        return $this->db->get()->result_array();
     }
 
     public function delete($noIndukBuku)

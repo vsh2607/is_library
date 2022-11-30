@@ -35,7 +35,7 @@ class Auth extends CI_Controller
             Email atau Password salah!
            </div>');
 
-            redirect('auth');
+            redirect('Auth');
         } else {
             $data = [
                 'st_username' => $staff['st_username'],
@@ -43,7 +43,7 @@ class Auth extends CI_Controller
             ];
 
             $this->session->set_userdata($data);
-            redirect('dashboard');
+            redirect('Dashboard');
         }
     }
 
@@ -56,6 +56,6 @@ class Auth extends CI_Controller
         Anda telah logout!
         </div>');
 
-        redirect('auth');
+        redirect('Auth');
     }
 }

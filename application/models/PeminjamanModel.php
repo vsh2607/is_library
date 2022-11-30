@@ -217,7 +217,7 @@ class PeminjamanModel extends CI_Model
             $this->db->update('detail_transaksi', $data);
             $this->reduceJumlahTransaksiNP($post['tr_kode'][$i]);
             $this->increaseJumlahBukuP($post['bkp_no_induk'][$i]);
-            $this->reduceJumlahPinjamPAnggota($post['agt_kode'][$i]);
+            //$this->reduceJumlahPinjamPAnggota($post['agt_kode'][$i]);
             
         }
     }
@@ -299,7 +299,7 @@ class PeminjamanModel extends CI_Model
             ];
             $totalBukuPaketPinjaman++;
 
-            $this->increaseJumlahPinjamBukuPAnggota($this->input->post('agt_kode'));
+            //$this->increaseJumlahPinjamBukuPAnggota($this->input->post('agt_kode'));
 
             $this->db->insert('detail_transaksi', $dataDetail);
 

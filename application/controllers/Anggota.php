@@ -23,8 +23,9 @@ class Anggota extends CI_Controller
         return $data['staff'];
     }
 
-    public function edit($anggotaImgUrl)
+    public function edit($anggotaKode)
     {
+       
         $data['staff'] = $this->userData();
 
         if ($data['staff'] === null) {
@@ -51,12 +52,12 @@ class Anggota extends CI_Controller
                 if ($this->upload->do_upload('agt_img_url')) {
 
                     $latestImgUrl = $this->upload->data('file_name');
-                    $this->AnggotaModel->edit($anggotaImgUrl, $latestImgUrl);
+                    $this->AnggotaModel->edit($anggotaKode, $latestImgUrl);
                     redirect('anggota');
                 } else {
 
                     $latestImgUrl = null;
-                    $this->AnggotaModel->edit($anggotaImgUrl, $latestImgUrl);
+                    $this->AnggotaModel->edit($anggotaKode, $latestImgUrl);
                     redirect('anggota');
                 }
             }
@@ -74,7 +75,7 @@ class Anggota extends CI_Controller
 
             redirect('auth');
         } else {
-            $this->AnggotaModel->delete($noIdAnggota);
+            $this->AnggotaModel->softDelete($noIdAnggota);
             redirect('anggota');
         }
     }
@@ -93,7 +94,7 @@ class Anggota extends CI_Controller
 
             redirect('auth');
         } else {
-            $data['data_anggota'] = $this->AnggotaModel->getAllData();
+            $data['data_anggota'] = $this->AnggotaModel->getAllAnggotaNonDeleted();
             $this->load->view('templates/menu_header', $data);
             $this->load->view('anggota/list', $data);
             $this->load->view('templates/menu_footer');

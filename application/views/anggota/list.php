@@ -216,7 +216,7 @@
                             document.getElementById('agt_dob').value = agt_dob;
                             document.getElementById('agt_alamat').value = agt_alamat;
                             document.getElementById('agt_no_telp').value = agt_no_telp;
-                            document.getElementById('formUpdate').action = "<?= base_url() ?>anggota/edit/" + agt_img_url.trim();
+                            document.getElementById('formUpdate').action = "<?= base_url() ?>anggota/edit/" + agt_kode.trim();
 
 
 
