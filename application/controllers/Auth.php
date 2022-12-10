@@ -3,6 +3,7 @@
 class Auth extends CI_Controller
 {
 
+    //Construct
     public function __construct()
     {
         parent::__construct();
